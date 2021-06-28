@@ -1,0 +1,11 @@
+.available-project-card-container {
+  flex: 30%;
+  max-width: 25%;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+}

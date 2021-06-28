@@ -1,0 +1,5 @@
+.available-projects-container {
+    display: flex;
+    margin-top: 5%;
+    padding: 0.5rem;
+}
