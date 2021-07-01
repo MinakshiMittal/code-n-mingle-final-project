@@ -1,6 +1,6 @@
 import {Routes, Route} from "react-router-dom";
 import './App.css';
-import {Home, AvailableProjectsListingPage, BlogPage} from "./Pages";
+import {Home, AvailableProjectsListingPage, BlogPage, CategoryWiseAvailableProjectsListingPage} from "./Pages";
 import {MainNav} from "./Components";
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="available-projects" element={<AvailableProjectsListingPage />} />
         <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/categories/:categoryId" element={<CategoryWiseAvailableProjectsListingPage/>} />
       </Routes>
     </div>
   );

@@ -7,13 +7,12 @@ export const AvailableProjectCard = ({availableProject}) => {
           <img
             className="project-image"
             src={availableProject.imageUrl}
-            alt="project-image"
+            alt="project"
           />
           <div className="product-name-with-wishlist-icon">
             <h4>{availableProject.name}</h4>
             <i className="fas fa-heart"></i>
           </div>
-          <p className="product-description-text">{availableProject.description}</p>
 
           <div className="product-price">
             <p className="current-product-price">₹{availableProject.minBidPrice}</p>
