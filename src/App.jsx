@@ -9,8 +9,10 @@ import {
   BuyerSignUp,
   CoderLogin,
   CoderSignUp,
+  ProjectBiddingPage,
 } from "./Pages";
 import { MainNav } from "./Components";
+import { PrivateRoute } from "./Components/PrivateRoute";
 
 function App() {
   return (
@@ -31,6 +33,10 @@ function App() {
         <Route path="/buyer/signup" element={<BuyerSignUp />} />
         <Route path="/coder/signup" element={<CoderSignUp />} />
         <Route path="/coder/login" element={<CoderLogin />} />
+        <PrivateRoute
+          path="/project/create-a-bid"
+          element={<ProjectBiddingPage />}
+        />
       </Routes>
     </div>
   );

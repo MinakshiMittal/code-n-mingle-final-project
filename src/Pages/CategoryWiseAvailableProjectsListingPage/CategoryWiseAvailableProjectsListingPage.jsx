@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { AvailableProjectCard } from "../../Components";
 import "./CategoryWiseAvailableProjectsListingPage.css";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export const CategoryWiseAvailableProjectsListingPage = () => {
-    const {categoryId} = useParams();
+  const { categoryId } = useParams();
 
-  const [categoryWiseAvailableProjects, setCategoryWiseAvailableProjects] = useState(null);
+  const [categoryWiseAvailableProjects, setCategoryWiseAvailableProjects] =
+    useState(null);
 
   useEffect(
     () =>
@@ -32,12 +33,9 @@ export const CategoryWiseAvailableProjectsListingPage = () => {
 
   return (
     <div className="available-projects-container">
-      {
-        categoryWiseAvailableProjects?.map(availableProject=>{
-          return <AvailableProjectCard availableProject={availableProject}/>
-        })
-      }
-      
+      {categoryWiseAvailableProjects?.map((availableProject) => {
+        return <AvailableProjectCard availableProject={availableProject} />;
+      })}
     </div>
   );
 };

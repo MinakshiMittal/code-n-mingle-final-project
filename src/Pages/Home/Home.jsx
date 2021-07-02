@@ -4,13 +4,12 @@ import "./Home.css";
 export const Home = () => {
   return (
     <div className="home-page">
-      
       <div
         style={{
           position: "relative",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center"
+          justifyContent: "center",
         }}
       >
         <img
@@ -30,7 +29,7 @@ export const Home = () => {
                 width: "80%",
                 padding: "0.95rem",
                 borderRadius: "0.5rem",
-                fontSize: "1.1rem"
+                fontSize: "1.1rem",
               }}
               type="text"
               placeholder="Search"
@@ -40,7 +39,7 @@ export const Home = () => {
                 padding: "1.09rem",
                 color: "red",
                 position: "absolute",
-                right: 0
+                right: 0,
               }}
             >
               Search

@@ -6,3 +6,5 @@ export { HowWeWork } from "./HowWeWork/HowWeWork";
 export { BuyerLoginForm } from "./BuyerLoginForm/BuyerLoginForm";
 export { BuyerSignUpForm } from "./BuyerSignUpForm/BuyerSignUpForm";
 export { OverlayContainer } from "./OverlayContainer";
+export { CoderLoginForm } from "./CoderLoginForm/CoderLoginForm";
+export { CoderSignUpForm } from "./CoderSignUpForm/CoderSignUpForm";

@@ -1,6 +1,9 @@
 import "./AvailableProjectCard.css";
+import { useNavigate } from "react-router-dom";
 
 export const AvailableProjectCard = ({ availableProject }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="available-project-card-container">
       <div className="card-container">
@@ -21,7 +24,12 @@ export const AvailableProjectCard = ({ availableProject }) => {
             Expected delivery within {availableProject.deliveryTimeInDays} days
           </small>
         </div>
-        <button className="button primary-btn">CREATE A BID</button>
+        <button
+          className="button primary-btn"
+          onClick={() => navigate(`/project/create-a-bid`)}
+        >
+          CREATE A BID
+        </button>
       </div>
     </div>
   );

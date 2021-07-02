@@ -4,7 +4,6 @@ import { AvailableProjectCard } from "../../Components";
 import "./AvailableProjectsListingPage.css";
 
 export const AvailableProjectsListingPage = () => {
-
   const [availableProjects, setAvailableProjects] = useState(null);
 
   useEffect(
@@ -30,12 +29,9 @@ export const AvailableProjectsListingPage = () => {
 
   return (
     <div className="available-projects-container">
-      {
-        availableProjects?.map(availableProject=>{
-          return <AvailableProjectCard availableProject={availableProject}/>
-        })
-      }
-      
+      {availableProjects?.map((availableProject) => {
+        return <AvailableProjectCard availableProject={availableProject} />;
+      })}
     </div>
   );
 };

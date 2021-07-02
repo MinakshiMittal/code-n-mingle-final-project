@@ -1,1 +1,1 @@
-export {projectReducer} from "./projectReducer";
+export { projectReducer } from "./projectReducer";

@@ -17,18 +17,18 @@ export const MainNav = () => {
       </Link>
       <Link to="/blogs">
         <a href="/" className="docs">
-          Blogs
+          About Us
         </a>
       </Link>
-      <a href="/" className="github">
+      {/* <a href="/" className="github">
         About Us
-      </a>
-      <a href="/" className="github">
+      </a> */}
+      <Link className="login" to="/coder/login">
         Log In
-      </a>
-      <a href="/" className="github">
+      </Link>
+      <Link className="signup" to="/coder/signup">
         Sign Up
-      </a>
+      </Link>
     </div>
   );
 };

@@ -6,3 +6,4 @@ export { BuyerLogin } from "./Buyer/BuyerLogin";
 export { BuyerSignUp } from "./Buyer/BuyerSignUp";
 export { CoderLogin } from "./Coder/CoderLogin";
 export { CoderSignUp } from "./Coder/CoderSignUp";
+export { ProjectBiddingPage } from "./ProjectBiddingPage";
