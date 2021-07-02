@@ -1,4 +1,9 @@
 @import url("https://mitra-ui.netlify.app/components.css");
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body {
+  font-family: "Varela Round", sans-serif;
+}
 
 /* .App {
   text-align: center;

@@ -1,4 +1,8 @@
 export { Home } from "./Home/Home";
-export {AvailableProjectsListingPage} from "./AvailableProjectsListingPage/AvailableProjectsListingPage";
+export { AvailableProjectsListingPage } from "./AvailableProjectsListingPage/AvailableProjectsListingPage";
 export { BlogPage } from "./BlogPage/BlogPage";
-export {CategoryWiseAvailableProjectsListingPage} from "./CategoryWiseAvailableProjectsListingPage/CategoryWiseAvailableProjectsListingPage";
+export { CategoryWiseAvailableProjectsListingPage } from "./CategoryWiseAvailableProjectsListingPage/CategoryWiseAvailableProjectsListingPage";
+export { BuyerLogin } from "./Buyer/BuyerLogin";
+export { BuyerSignUp } from "./Buyer/BuyerSignUp";
+export { CoderLogin } from "./Coder/CoderLogin";
+export { CoderSignUp } from "./Coder/CoderSignUp";

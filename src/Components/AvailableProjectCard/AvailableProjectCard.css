@@ -1,7 +1,6 @@
 .available-project-card-container {
   flex: 30%;
   max-width: 25%;
-  
 }
 
 .project-image {
@@ -13,10 +12,9 @@
 }
 
 .product-name-with-wishlist-icon {
-  flex-grow:1;
+  flex-grow: 1;
 }
 
 .card-container.primary-btn {
   align-self: flex-end;
 }
-
