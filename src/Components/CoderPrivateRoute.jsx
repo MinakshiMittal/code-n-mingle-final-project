@@ -1,8 +1,8 @@
 import { Route, Navigate } from "react-router-dom";
-import { useAuth } from "../Context";
+import { useCoderAuth } from "../Context";
 
-export const PrivateRoute = ({ path, ...props }) => {
-  const { isUserLoggedIn } = useAuth();
+export const CoderPrivateRoute = ({ path, ...props }) => {
+  const { isUserLoggedIn } = useCoderAuth();
   return isUserLoggedIn ? (
     <Route {...props} path={path} />
   ) : (

@@ -1,9 +1,8 @@
 import "./BuyerSignUpForm.css";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../../Context";
+import { useBuyerAuth } from "../../../Context";
 import { useState } from "react";
 import { ErrorNotice } from "../../../Components";
-import axios from "axios";
 
 export const BuyerSignUpForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -12,37 +11,11 @@ export const BuyerSignUpForm = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState();
 
-  const { buyerDetails, setBuyerDetails } = useAuth();
+  const { signUpBuyerWithDetails } = useBuyerAuth();
 
   const signUpHandler = async (event) => {
     event.preventDefault();
-
-    try {
-      const newUser = { firstName, lastName, email, password };
-      console.log(newUser);
-      await axios.post(
-        "https://code-n-mingle-backend.mittalminakshi.repl.co/buyer/signup",
-        newUser
-      );
-      const { data } = await axios.post(
-        "https://code-n-mingle-backend.mittalminakshi.repl.co/buyer/login",
-        {
-          email,
-          password,
-        }
-      );
-      setBuyerDetails({
-        token: data.token,
-        buyerId: data.buyerId,
-      });
-      localStorage.setItem(
-        "login",
-        JSON.stringify({ isUserLoggedIn: true, token: buyerDetails.token })
-      );
-    } catch (error) {
-      error.response.data.msg && setError(error.response.data.msg);
-      console.log(error);
-    }
+    signUpBuyerWithDetails(firstName, lastName, email, password);
   };
 
   return (

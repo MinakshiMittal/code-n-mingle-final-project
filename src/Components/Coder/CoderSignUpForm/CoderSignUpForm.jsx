@@ -1,6 +1,6 @@
 import "./CoderSignUpForm.css";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../../Context";
+import { useCoderAuth } from "../../../Context";
 import { useState } from "react";
 import { ErrorNotice } from "../../../Components";
 import axios from "axios";
@@ -12,36 +12,11 @@ export const CoderSignUpForm = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState();
 
-  const { coderDetails, setCoderDetails } = useAuth();
+  const { signUpCoderWithDetails } = useCoderAuth();
 
   const signUpHandler = async (event) => {
     event.preventDefault();
-    try {
-      const newUser = { firstName, lastName, email, password };
-      console.log(newUser);
-      await axios.post(
-        "https://code-n-mingle-backend.mittalminakshi.repl.co/coder/signup",
-        newUser
-      );
-      const { data } = await axios.post(
-        "https://code-n-mingle-backend.mittalminakshi.repl.co/coder/login",
-        {
-          email,
-          password,
-        }
-      );
-      setCoderDetails({
-        token: data.token,
-        coderId: data.coderId,
-      });
-      localStorage.setItem(
-        "login",
-        JSON.stringify({ isUserLoggedIn: true, token: coderDetails.token })
-      );
-    } catch (error) {
-      error.response.data.msg && setError(error.response.data.msg);
-      console.log(error);
-    }
+    signUpCoderWithDetails(firstName, lastName, email, password);
   };
 
   return (

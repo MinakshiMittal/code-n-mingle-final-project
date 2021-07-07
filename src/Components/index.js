@@ -10,3 +10,4 @@ export { CoderLoginForm } from "./Coder/CoderLoginForm/CoderLoginForm";
 export { CoderSignUpForm } from "./Coder/CoderSignUpForm/CoderSignUpForm";
 export { BuyerOverlayContainer } from "./Buyer/BuyerOverlayContainer";
 export { ErrorNotice } from "./ErrorNotice";
+export { CoderPrivateRoute } from "./CoderPrivateRoute";
