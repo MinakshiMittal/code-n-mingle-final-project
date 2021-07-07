@@ -1,4 +1,4 @@
-import { CoderLoginForm, OverlayContainer } from "../../Components";
+import { CoderLoginForm, CoderOverlayContainer } from "../../Components";
 import "./Coder.css";
 
 export const CoderLogin = () => {
@@ -6,7 +6,7 @@ export const CoderLogin = () => {
     <div className="credentials-container">
       <div class="container" id="container">
         <CoderLoginForm />
-        <OverlayContainer />
+        <CoderOverlayContainer />
       </div>
     </div>
   );

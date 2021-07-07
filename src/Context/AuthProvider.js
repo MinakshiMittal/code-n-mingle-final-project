@@ -6,8 +6,8 @@ export const AuthContext = createContext();
 
 const loginService = (email, password) => {
   return axios.post(
-    "https://mitra-cart-backend.mittalminakshi.repl.co/buyer/login",
-    { email: email, password: password }
+    "https://code-n-mingle-backend.mittalminakshi.repl.co/buyer/login",
+    { email, password }
   );
 };
 
@@ -17,6 +17,10 @@ export const AuthProvider = ({ children }) => {
   ) || { isUserLoggedIn: false, token: null };
   const [isUserLogin, setLogin] = useState(isUserLoggedIn);
   const [token, setToken] = useState(savedToken);
+  const [coderDetails, setCoderDetails] = useState({
+    token: null,
+    coderId: null,
+  });
 
   async function loginUserWithCredentials(username, password) {
     try {
@@ -47,7 +51,14 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ isUserLogin, loginUserWithCredentials, logout, token }}
+      value={{
+        isUserLogin,
+        loginUserWithCredentials,
+        logout,
+        token,
+        setCoderDetails,
+        coderDetails,
+      }}
     >
       {children}
     </AuthContext.Provider>

@@ -28,7 +28,7 @@ export const CategoryWiseAvailableProjectsListingPage = () => {
           }
         })();
       }, 1000),
-    []
+    [categoryId]
   );
 
   return (

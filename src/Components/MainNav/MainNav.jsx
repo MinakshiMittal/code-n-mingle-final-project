@@ -7,18 +7,18 @@ export const MainNav = () => {
       <img
         src="https://cdn.pixabay.com/photo/2017/01/08/10/49/group-1962592_1280.png"
         alt="logo"
-        class="hero-image"
+        className="hero-image"
       ></img>
       <div className="hero-name">CODE-N-MINGLE</div>
-      <Link to="/available-projects">
-        <a href="/" className="get-started">
-          Explore
-        </a>
+      <Link to="/available-projects" className="get-started">
+        {/* <a href="/" > */}
+        Explore
+        {/* </a> */}
       </Link>
-      <Link to="/blogs">
-        <a href="/" className="docs">
-          About Us
-        </a>
+      <Link to="/blogs" className="docs">
+        {/* <a href="/" > */}
+        About Us
+        {/* </a> */}
       </Link>
       {/* <a href="/" className="github">
         About Us

@@ -1,4 +1,4 @@
-import { BuyerLoginForm, OverlayContainer } from "../../Components";
+import { BuyerLoginForm, BuyerOverlayContainer } from "../../Components";
 import "./Buyer.css";
 
 export const BuyerLogin = () => {
@@ -6,7 +6,7 @@ export const BuyerLogin = () => {
     <div className="credentials-container">
       <div class="container" id="container">
         <BuyerLoginForm />
-        <OverlayContainer />
+        <BuyerOverlayContainer />
       </div>
     </div>
   );

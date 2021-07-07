@@ -6,6 +6,7 @@ export const ProjectContext = createContext();
 export const ProjectProvider = ({ children }) => {
   const [state, dispatch] = useReducer(projectReducer, {
     availableProjects: [],
+    
   });
 
   return (

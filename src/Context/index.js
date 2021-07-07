@@ -1,2 +1,2 @@
-export { ProjectProvider, useProject } from "./projectContext";
+export { ProjectProvider, useProject } from "./ProjectProvider";
 export { AuthProvider, useAuth } from "./AuthProvider";
