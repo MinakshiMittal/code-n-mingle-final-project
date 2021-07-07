@@ -14,6 +14,8 @@ export const CoderLoginForm = () => {
     isUserLogin ? logout() : loginCoderWithCredentials(email, password);
   };
 
+  console.log(isUserLogin);
+
   return (
     <div class="form-container sign-in-container">
       <form>

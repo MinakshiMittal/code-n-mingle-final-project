@@ -1,6 +1,6 @@
 import axios from "axios";
-import { createContext, useContext } from "react";
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const CoderAuthContext = createContext();
 
@@ -33,6 +33,8 @@ export const CoderAuthProvider = ({ children }) => {
   const [coderDetails, setCoderDetails] = useState({
     coderId: null,
   });
+  const { state } = useLocation();
+  const navigate = useNavigate();
 
   const signUpCoderWithDetails = async (
     firstName,
@@ -58,6 +60,7 @@ export const CoderAuthProvider = ({ children }) => {
       console.log(coderLoginResponse);
       if (coderLoginResponse.status === 200) {
         loginCoder(coderLoginResponse.data);
+        navigate(state.from);
       }
     } catch (error) {
       console.error(error);
