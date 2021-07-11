@@ -1,15 +1,15 @@
 import "./ProgressBar.css";
 
 export const ProgressBar = ({ bgcolor, completed }) => {
-  const containerStyles = {
-    backgroundColor: "rgba(219,85,129,.12549019607843137)",
-    borderRadius: "5px",
-    color: "#db5581",
-    height: "24px",
-    marginBottom: ".1rem",
-    marginTop: ".1rem",
-    position: "relative",
-  };
+  // const containerStyles = {
+  //   backgroundColor: "rgba(219,85,129,.12549019607843137)",
+  //   borderRadius: "5px",
+  //   color: "#db5581",
+  //   height: "24px",
+  //   marginBottom: ".1rem",
+  //   marginTop: ".1rem",
+  //   position: "relative",
+  // };
 
   const fillerStyles = {
     height: "100%",

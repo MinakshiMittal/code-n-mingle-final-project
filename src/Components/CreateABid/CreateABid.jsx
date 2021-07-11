@@ -12,6 +12,7 @@ export const CreateABid = () => {
   const [bidDeliveryTimeInDays, setBidDeliveryTimeInDays] = useState("");
 
   console.log(coderDetails);
+  console.log(bidPrice, bidDeliveryTimeInDays);
 
   const bidHandler = async () => {
     return await axios.post(
