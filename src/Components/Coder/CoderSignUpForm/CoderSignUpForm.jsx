@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useCoderAuth } from "../../../Context";
 import { useState } from "react";
 import { ErrorNotice } from "../../../Components";
-import axios from "axios";
+// import axios from "axios";
 
 export const CoderSignUpForm = () => {
   const [firstName, setFirstName] = useState("");

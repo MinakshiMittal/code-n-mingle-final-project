@@ -24,17 +24,23 @@ const coderLoginService = (email, password) => {
 };
 
 export const CoderAuthProvider = ({ children }) => {
-  const { isUserLoggedIn, token: savedToken } = JSON.parse(
-    localStorage?.getItem("login")
-  ) || { isUserLoggedIn: false, token: null };
-
-  const [isUserLogin, setLogin] = useState(isUserLoggedIn);
-  const [token, setToken] = useState(savedToken);
-  const [coderDetails, setCoderDetails] = useState({
+  const {
+    isCoderLoggedIn,
+    token: savedToken,
+    coderId,
+  } = JSON.parse(localStorage?.getItem("login")) || {
+    isCoderLoggedIn: false,
+    token: null,
     coderId: null,
-  });
+  };
+
+  const [isCoderLogin, setLogin] = useState(isCoderLoggedIn);
+  const [token, setToken] = useState(savedToken);
+  const [coderDetails, setCoderDetails] = useState(coderId);
   const { state } = useLocation();
   const navigate = useNavigate();
+
+  console.log(state);
 
   const signUpCoderWithDetails = async (
     firstName,
@@ -60,7 +66,10 @@ export const CoderAuthProvider = ({ children }) => {
       console.log(coderLoginResponse);
       if (coderLoginResponse.status === 200) {
         loginCoder(coderLoginResponse.data);
-        navigate(state.from);
+        navigate("/coder/dashboard");
+        // navigate(state ? state.from : "/");
+        // }
+        // else
       }
     } catch (error) {
       console.error(error);
@@ -68,14 +77,13 @@ export const CoderAuthProvider = ({ children }) => {
   }
 
   const loginCoder = ({ token, coderId }) => {
+    console.log(coderId);
     setToken(token);
     setLogin(true);
-    setCoderDetails({
-      coderId: coderId,
-    });
+    setCoderDetails(coderId);
     localStorage.setItem(
       "login",
-      JSON.stringify({ isUserLoggedIn: true, token })
+      JSON.stringify({ isCoderLoggedIn: true, token, coderId })
     );
   };
 
@@ -83,12 +91,13 @@ export const CoderAuthProvider = ({ children }) => {
     localStorage.removeItem("login");
     setLogin(false);
     setToken(null);
+    navigate("/");
   };
 
   return (
     <CoderAuthContext.Provider
       value={{
-        isUserLogin,
+        isCoderLogin,
         loginCoderWithCredentials,
         logout,
         token,

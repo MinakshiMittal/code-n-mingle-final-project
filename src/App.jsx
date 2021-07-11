@@ -9,10 +9,16 @@ import {
   BuyerSignUp,
   CoderLogin,
   CoderSignUp,
-  ProjectBiddingPage,
+  // ProjectBiddingPage,
+  CoderDashBoard,
+  CoderProfileEditing,
 } from "./Pages";
-import { MainNav } from "./Components";
-import { CoderPrivateRoute } from "./Components";
+import {
+  MainNav,
+  CoderPrivateRoute,
+  // CoderDashBoardBody,
+  CreateABid,
+} from "./Components";
 
 function App() {
   return (
@@ -35,7 +41,15 @@ function App() {
         <Route path="/coder/login" element={<CoderLogin />} />
         <CoderPrivateRoute
           path="/project/create-a-bid"
-          element={<ProjectBiddingPage />}
+          element={<CreateABid />}
+        />
+        <CoderPrivateRoute
+          path="/coder/dashboard"
+          element={<CoderDashBoard />}
+        />
+        <Route
+          path="/coder/profile-editing"
+          element={<CoderProfileEditing />}
         />
       </Routes>
     </div>

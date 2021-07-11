@@ -17,7 +17,7 @@ export const CoderLoginForm = () => {
   console.log(isUserLogin);
 
   return (
-    <div class="form-container sign-in-container">
+    <div className="form-container sign-in-container">
       <form>
         <h1>Sign in</h1>
         <input

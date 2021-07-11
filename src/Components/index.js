@@ -11,3 +11,7 @@ export { CoderSignUpForm } from "./Coder/CoderSignUpForm/CoderSignUpForm";
 export { BuyerOverlayContainer } from "./Buyer/BuyerOverlayContainer";
 export { ErrorNotice } from "./ErrorNotice";
 export { CoderPrivateRoute } from "./CoderPrivateRoute";
+export { CreateABid } from "./CreateABid/CreateABid";
+export { CoderDashBoardSideNav } from "./CoderDashboard/CoderDashBoardSideNav/CoderDashBoardSideNav";
+export { CoderDashBoardDefaultView } from "./CoderDashboard/CoderDashBoardDefaultView/CoderDashBoardDefaultView";
+export { CoderProfileEditingForm } from "./CoderDashboard/CoderProfileEditingForm/CoderProfileEditingForm";
