@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { AvailableProjectCard } from "../../Components";
+import { AvailableProjectCard, MainNav } from "../../Components";
 import "./AvailableProjectsListingPage.css";
 
 export const AvailableProjectsListingPage = () => {
@@ -28,10 +28,13 @@ export const AvailableProjectsListingPage = () => {
   );
 
   return (
-    <div className="available-projects-container">
-      {availableProjects?.map((availableProject) => {
-        return <AvailableProjectCard availableProject={availableProject} />;
-      })}
-    </div>
+    <>
+      <MainNav />
+      <div className="available-projects-container">
+        {availableProjects?.map((availableProject) => {
+          return <AvailableProjectCard availableProject={availableProject} />;
+        })}
+      </div>
+    </>
   );
 };

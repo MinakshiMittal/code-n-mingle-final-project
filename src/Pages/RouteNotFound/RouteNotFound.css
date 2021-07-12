@@ -1,0 +1,8 @@
+.route-not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #37a6f8;
+  z-index: 3;
+}

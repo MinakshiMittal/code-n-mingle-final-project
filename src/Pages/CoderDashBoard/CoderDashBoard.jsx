@@ -1,14 +1,18 @@
 import {
   CoderDashBoardSideNav,
   CoderDashBoardDefaultView,
+  MainNav,
 } from "../../Components";
 import "./CoderDashBoard.css";
 
 export const CoderDashBoard = () => {
   return (
-    <div className="coder-dashboard">
-      <CoderDashBoardSideNav />
-      <CoderDashBoardDefaultView />
-    </div>
+    <>
+      <MainNav />
+      <div className="coder-dashboard">
+        <CoderDashBoardSideNav />
+        <CoderDashBoardDefaultView />
+      </div>
+    </>
   );
 };

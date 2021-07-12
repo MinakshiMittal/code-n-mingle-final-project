@@ -1,14 +1,18 @@
 import {
   CoderDashBoardSideNav,
   CoderProfileEditingForm,
+  MainNav,
 } from "../../Components";
 import "./CoderProfileEditing.css";
 
 export const CoderProfileEditing = () => {
   return (
-    <div className="coder-dashboard">
-      <CoderDashBoardSideNav />
-      <CoderProfileEditingForm />
-    </div>
+    <>
+      <MainNav />
+      <div className="coder-dashboard">
+        <CoderDashBoardSideNav />
+        <CoderProfileEditingForm />
+      </div>
+    </>
   );
 };

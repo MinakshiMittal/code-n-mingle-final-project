@@ -12,6 +12,7 @@ import {
   // ProjectBiddingPage,
   CoderDashBoard,
   CoderProfileEditing,
+  RouteNotFound,
 } from "./Pages";
 import {
   MainNav,
@@ -23,7 +24,6 @@ import {
 function App() {
   return (
     <div className="App">
-      <MainNav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -51,6 +51,7 @@ function App() {
           path="/coder/profile-editing"
           element={<CoderProfileEditing />}
         />
+        <Route path="*" element={<RouteNotFound />} />
       </Routes>
     </div>
   );

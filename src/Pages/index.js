@@ -9,3 +9,4 @@ export { CoderSignUp } from "./Coder/CoderSignUp";
 export { ProjectBiddingPage } from "./ProjectBiddingPage";
 export { CoderDashBoard } from "./CoderDashBoard/CoderDashBoard";
 export { CoderProfileEditing } from "./CoderProfileEditing/CoderProfileEditing";
+export { RouteNotFound } from "./RouteNotFound/RouteNotFound";

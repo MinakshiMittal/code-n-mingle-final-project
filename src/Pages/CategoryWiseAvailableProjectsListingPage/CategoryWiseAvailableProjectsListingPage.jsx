@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { AvailableProjectCard } from "../../Components";
+import { AvailableProjectCard, MainNav } from "../../Components";
 import "./CategoryWiseAvailableProjectsListingPage.css";
 import { useParams } from "react-router-dom";
 
@@ -32,10 +32,13 @@ export const CategoryWiseAvailableProjectsListingPage = () => {
   );
 
   return (
-    <div className="available-projects-container">
-      {categoryWiseAvailableProjects?.map((availableProject) => {
-        return <AvailableProjectCard availableProject={availableProject} />;
-      })}
-    </div>
+    <>
+      <MainNav />
+      <div className="available-projects-container">
+        {categoryWiseAvailableProjects?.map((availableProject) => {
+          return <AvailableProjectCard availableProject={availableProject} />;
+        })}
+      </div>
+    </>
   );
 };
