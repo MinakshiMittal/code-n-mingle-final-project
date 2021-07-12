@@ -15,7 +15,6 @@ import {
   RouteNotFound,
 } from "./Pages";
 import {
-  MainNav,
   CoderPrivateRoute,
   // CoderDashBoardBody,
   CreateABid,
