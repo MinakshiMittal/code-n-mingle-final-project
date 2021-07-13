@@ -15,3 +15,4 @@ export { CreateABid } from "./CreateABid/CreateABid";
 export { CoderDashBoardSideNav } from "./CoderDashboard/CoderDashBoardSideNav/CoderDashBoardSideNav";
 export { CoderDashBoardDefaultView } from "./CoderDashboard/CoderDashBoardDefaultView/CoderDashBoardDefaultView";
 export { CoderProfileEditingForm } from "./CoderDashboard/CoderProfileEditingForm/CoderProfileEditingForm";
+export { UploadProject } from "./CoderDashboard/UplaodProject/UploadProject";

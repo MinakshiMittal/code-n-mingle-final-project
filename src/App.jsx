@@ -13,6 +13,8 @@ import {
   CoderDashBoard,
   CoderProfileEditing,
   RouteNotFound,
+  CoderProjectUploading,
+  // CoderUploadedProjects,
 } from "./Pages";
 import {
   CoderPrivateRoute,
@@ -50,6 +52,14 @@ function App() {
           path="/coder/profile-editing"
           element={<CoderProfileEditing />}
         />
+        <Route
+          path="/coder/upload-a-project"
+          element={<CoderProjectUploading />}
+        />
+        {/* <Route
+          path="/coder/uploaded-projects"
+          element={<CoderUploadedProjects />}
+        /> */}
         <Route path="*" element={<RouteNotFound />} />
       </Routes>
     </div>
