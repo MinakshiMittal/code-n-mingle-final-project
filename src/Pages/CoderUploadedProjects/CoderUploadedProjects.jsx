@@ -19,7 +19,7 @@ export const CoderUploadedProjects = () => {
       setCoderUploadedProjects(response.data.coderUploadedProjects);
     }
     console.log("coc", coderUploadedProjects);
-  }, []);
+  }, [coderDetails, coderUploadedProjects]);
 
   return (
     <>
