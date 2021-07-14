@@ -53,19 +53,22 @@
 .getting-started {
   width: 25%;
   text-align: center;
-
-  border-radius: 0.5rem;
   padding: 1rem;
   font-size: 1.3rem;
   font-weight: 800;
   text-transform: none;
-  background-color: #77f2fc;
-  border: none;
+  background-color: transparent;
   position: absolute;
   bottom: 10%;
   left: 0;
   right: 0;
   margin: auto;
+  border: 2px solid #77f2fc;
+  border-radius: 0.5rem;
+  color: #77f2fc;
+  font-family: "Varela Round";
+  font-size: x-large;
+  font-weight: 900;
 }
 
 .landing-image-text {

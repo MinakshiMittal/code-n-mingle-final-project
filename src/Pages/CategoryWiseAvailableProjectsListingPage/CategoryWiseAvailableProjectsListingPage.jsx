@@ -10,26 +10,22 @@ export const CategoryWiseAvailableProjectsListingPage = () => {
   const [categoryWiseAvailableProjects, setCategoryWiseAvailableProjects] =
     useState(null);
 
-  useEffect(
-    () =>
-      setTimeout(() => {
-        (async () => {
-          try {
-            const { data, status } = await axios.get(
-              `https://code-n-mingle-backend.mittalminakshi.repl.co/categories/${categoryId}`
-            );
-            console.log(data.projects, status);
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data, status } = await axios.get(
+          `https://code-n-mingle-backend.mittalminakshi.repl.co/categories/${categoryId}`
+        );
+        console.log(data.projects, status);
 
-            if (status === 200) {
-              setCategoryWiseAvailableProjects(data.projects);
-            }
-          } catch (error) {
-            console.error(error);
-          }
-        })();
-      }, 1000),
-    [categoryId]
-  );
+        if (status === 200) {
+          setCategoryWiseAvailableProjects(data.projects);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, [categoryId]);
 
   return (
     <>

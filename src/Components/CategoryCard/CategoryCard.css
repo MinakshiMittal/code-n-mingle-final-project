@@ -5,6 +5,11 @@
   font-size: 1.3rem;
   color: white;
   font-weight: 900;
+  background: #161625ba;
+  width: 100%;
+  text-align: center;
+  padding: 0.3rem;
+  letter-spacing: 0.08rem;
 }
 
 .category-image {

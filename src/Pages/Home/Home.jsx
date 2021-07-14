@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router";
 import { CategoriesListing, HowWeWork, MainNav } from "../../Components";
-// import CoverImage from "../../assets/home-page-code-n-mingle.jpg";
 import "./Home.css";
 
 export const Home = () => {
@@ -22,7 +21,6 @@ export const Home = () => {
           <img
             className="home-page-cover-img"
             src="https://cdn.pixabay.com/photo/2018/12/10/02/14/manhattan-3866140_1280.jpg"
-            // src={CoverImage}
             alt="cover img"
           />
           <div className="text-overlay"></div>

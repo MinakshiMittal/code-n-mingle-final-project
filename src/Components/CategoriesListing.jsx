@@ -5,26 +5,22 @@ import axios from "axios";
 export const CategoriesListing = () => {
   const [categories, setCategories] = useState(null);
 
-  useEffect(
-    () =>
-      setTimeout(() => {
-        (async () => {
-          try {
-            const { data, status } = await axios.get(
-              "https://code-n-mingle-backend.mittalminakshi.repl.co/categories"
-            );
-            console.log(data.categories, status);
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data, status } = await axios.get(
+          "https://code-n-mingle-backend.mittalminakshi.repl.co/categories"
+        );
+        console.log(data.categories, status);
 
-            if (status === 200) {
-              setCategories(data.categories);
-            }
-          } catch (error) {
-            console.error(error);
-          }
-        })();
-      }, 1000),
-    []
-  );
+        if (status === 200) {
+          setCategories(data.categories);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, [categories]);
 
   return (
     <>

@@ -8,22 +8,22 @@ export const AvailableProjectsListingPage = () => {
 
   useEffect(
     () =>
-      setTimeout(() => {
-        (async () => {
-          try {
-            const { data, status } = await axios.get(
-              "https://code-n-mingle-backend.mittalminakshi.repl.co/available-projects"
-            );
-            console.log(data.availableProjects, status);
+      // setTimeout(() => {
+      (async () => {
+        try {
+          const { data, status } = await axios.get(
+            "https://code-n-mingle-backend.mittalminakshi.repl.co/available-projects"
+          );
+          console.log(data.availableProjects, status);
 
-            if (status === 200) {
-              setAvailableProjects(data.availableProjects);
-            }
-          } catch (error) {
-            console.error(error);
+          if (status === 200) {
+            setAvailableProjects(data.availableProjects);
           }
-        })();
-      }, 1000),
+        } catch (error) {
+          console.error(error);
+        }
+      })(),
+    // }, 1000),
     []
   );
 

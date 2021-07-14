@@ -6,21 +6,30 @@ import {
   MainNav,
   UploadedProjectCard,
 } from "../../Components";
-import { useCoderAuth } from "../../Context";
+import { useCoderAuth, useUploadedProjects } from "../../Context";
 
 export const CoderUploadedProjects = () => {
   const { coderDetails } = useCoderAuth();
-  const [coderUploadedProjects, setCoderUploadedProjects] = useState(null);
-  useEffect(async () => {
-    const response = await axios.get(
-      `https://code-n-mingle-backend.mittalminakshi.repl.co/coder/${coderDetails}/uploaded-projects`
-    );
-    console.log("up", response.data);
-    if (response.status === 200) {
-      setCoderUploadedProjects(response.data.coderUploadedProjects);
-    }
-    console.log("coc", coderUploadedProjects);
-  }, [coderDetails, coderUploadedProjects]);
+  const { uploadedProjects, setUploadedProjects } = useUploadedProjects();
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get(
+          `https://code-n-mingle-backend.mittalminakshi.repl.co/coder/${coderDetails}/uploaded-projects`
+        );
+        console.log("up", response.data);
+        if (response.status === 200) {
+          setUploadedProjects(response.data.coderUploadedProjects);
+        }
+        console.log("coc", uploadedProjects);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [uploadedProjects]);
+
+  console.log("first", uploadedProjects);
 
   return (
     <>
@@ -29,12 +38,11 @@ export const CoderUploadedProjects = () => {
         <CoderDashBoardSideNav />
 
         <div className="all-uploaded-projects-container">
-          {coderUploadedProjects?.map((uploadedProject) => {
+          {uploadedProjects?.map((uploadedProject) => {
+            console.log(uploadedProject);
             return <UploadedProjectCard uploadedProject={uploadedProject} />;
           })}
         </div>
-
-        {/* <UploadedProjects /> */}
       </div>
     </>
   );
