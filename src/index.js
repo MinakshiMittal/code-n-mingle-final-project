@@ -8,18 +8,21 @@ import {
   ProjectProvider,
   CoderAuthProvider,
   BuyerAuthProvider,
+  UploadedProjectsProvider,
 } from "./Context";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <CoderAuthProvider>
-        <BuyerAuthProvider>
-          <ProjectProvider>
-            <App />
-          </ProjectProvider>
-        </BuyerAuthProvider>
-      </CoderAuthProvider>
+      <UploadedProjectsProvider>
+        <CoderAuthProvider>
+          <BuyerAuthProvider>
+            <ProjectProvider>
+              <App />
+            </ProjectProvider>
+          </BuyerAuthProvider>
+        </CoderAuthProvider>
+      </UploadedProjectsProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
