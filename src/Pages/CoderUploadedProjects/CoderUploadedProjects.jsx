@@ -1,4 +1,5 @@
 import axios from "axios";
+import "./CoderUploadedProjects.css";
 import { useEffect, useState } from "react";
 import {
   CoderDashBoardSideNav,
@@ -26,13 +27,13 @@ export const CoderUploadedProjects = () => {
       <MainNav />
       <div className="coder-dashboard">
         <CoderDashBoardSideNav />
-        {coderUploadedProjects?.map((uploadedProject) => {
-          return (
-            <div className="all-uploaded-projects-container">
-              <UploadedProjectCard uploadedProject={uploadedProject} />
-            </div>
-          );
-        })}
+
+        <div className="all-uploaded-projects-container">
+          {coderUploadedProjects?.map((uploadedProject) => {
+            return <UploadedProjectCard uploadedProject={uploadedProject} />;
+          })}
+        </div>
+
         {/* <UploadedProjects /> */}
       </div>
     </>

@@ -1,0 +1,6 @@
+.display-project-container {
+  display: flex;
+  margin-top: 5%;
+  padding: 0.5rem;
+  flex-wrap: wrap;
+}

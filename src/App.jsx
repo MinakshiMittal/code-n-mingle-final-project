@@ -14,6 +14,7 @@ import {
   RouteNotFound,
   CoderProjectUploading,
   CoderUploadedProjects,
+  UploadedProjectDisplayPage,
 } from "./Pages";
 import { CoderPrivateRoute, CreateABid } from "./Components";
 import { useCoderAuth } from "./Context";
@@ -60,6 +61,10 @@ function App() {
         <Route
           path="/coder/uploaded-projects"
           element={<CoderUploadedProjects />}
+        />
+        <Route
+          path="/coder/uploaded-project/:uploadedProjectId"
+          element={<UploadedProjectDisplayPage />}
         />
         <Route path="*" element={<RouteNotFound />} />
       </Routes>

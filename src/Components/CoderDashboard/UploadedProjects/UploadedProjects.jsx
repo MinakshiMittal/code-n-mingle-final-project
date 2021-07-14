@@ -16,17 +16,15 @@ export const UploadedProjects = () => {
 
   return (
     <div className="video-player">
+      <div className="uploaded-project-list product-name-with-wishlist-icon">
+        <h4>{projectName}</h4>
+      </div>
       <video
         src="https://vod-progressive.akamaized.net/exp=1626213331~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4909%2F21%2F549547533%2F2605682014.mp4~hmac=7d49c624c96abfcb38eb71e5ae21fe0aa1e4b6b9d760476c84439ef436816331/vimeo-prod-skyfire-std-us/01/4909/21/549547533/2605682014.mp4?filename=Sand+-+73847.mp4"
         className="video-play-screen"
         controls
         autoplay
-      >
-        {/* <source
-
-        // type="video/mp4"
-        ></source> */}
-      </video>
+      ></video>
     </div>
   );
 };

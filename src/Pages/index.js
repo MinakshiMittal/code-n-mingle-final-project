@@ -12,3 +12,4 @@ export { CoderProfileEditing } from "./CoderProfileEditing/CoderProfileEditing";
 export { RouteNotFound } from "./RouteNotFound/RouteNotFound";
 export { CoderProjectUploading } from "./CoderProjectUploading/CoderProjectUploading";
 export { CoderUploadedProjects } from "./CoderUploadedProjects/CoderUploadedProjects";
+export { UploadedProjectDisplayPage } from "./UploadedProjectDisplayPage/UploadedProjectDisplayPage";

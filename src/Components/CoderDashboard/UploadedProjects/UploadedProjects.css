@@ -1,5 +1,5 @@
 .video-player {
-  margin-left: 15%;
+  /* margin-left: 15%; */
   margin-top: 2%;
   display: flex;
   justify-content: center;
@@ -8,6 +8,6 @@
 }
 
 .video-play-screen {
-  width: 80%;
-  height: 80vh;
+  width: 70%;
+  height: auto;
 }
