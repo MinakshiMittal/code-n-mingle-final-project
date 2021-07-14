@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router";
 import { CategoriesListing, HowWeWork, MainNav } from "../../Components";
 // import CoverImage from "../../assets/home-page-code-n-mingle.jpg";
 import "./Home.css";
 
 export const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <MainNav />
@@ -65,7 +68,12 @@ export const Home = () => {
             portfolio. Code-n-Mingle brings paid projects right to your inbox.
           </p>
         </div>
-        <button className="getting-started">Get Started - It's free</button>
+        <button
+          className="getting-started"
+          onClick={() => navigate("/coder/login")}
+        >
+          Get Started - It's free
+        </button>
         <CategoriesListing />
         <HowWeWork />
       </div>

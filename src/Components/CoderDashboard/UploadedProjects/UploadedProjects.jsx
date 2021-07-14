@@ -1,9 +1,32 @@
+import axios from "axios";
+import { useEffect } from "react";
+import { useCoderAuth } from "../../../Context";
+import "./UploadedProjects.css";
+
 export const UploadedProjects = () => {
+  const { coderDetails } = useCoderAuth();
+
+  useEffect(async () => {
+    const response = await axios.get(
+      `https://code-n-mingle-backend.mittalminakshi.repl.co/coder/${coderDetails}/uploaded-projects`
+    );
+
+    console.log("uploaded", response.data.coderUploadedProjects);
+  });
+
   return (
-    <>
-      <video width="320" height="240" controls autoplay>
-        <source src="movie.mp4" type="video/mp4"></source>
+    <div className="video-player">
+      <video
+        src="https://vod-progressive.akamaized.net/exp=1626213331~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4909%2F21%2F549547533%2F2605682014.mp4~hmac=7d49c624c96abfcb38eb71e5ae21fe0aa1e4b6b9d760476c84439ef436816331/vimeo-prod-skyfire-std-us/01/4909/21/549547533/2605682014.mp4?filename=Sand+-+73847.mp4"
+        className="video-play-screen"
+        controls
+        autoplay
+      >
+        {/* <source
+
+        // type="video/mp4"
+        ></source> */}
       </video>
-    </>
+    </div>
   );
 };

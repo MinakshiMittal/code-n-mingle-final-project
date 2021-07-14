@@ -1,0 +1,35 @@
+/* .uploaded-project-card {
+  width: 25%;
+  background-color: blueviolet;
+  height: 25vh;
+} */
+
+.dashboard-uploaded-projects-cards-container {
+  padding-top: 12vh;
+  margin-left: 15%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  align-content: center;
+  background: #191414;
+}
+
+.uploaded-project-card-container-1 {
+  height: 38vh;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #6e7582;
+  margin: 1rem;
+  border-radius: 0.8rem;
+  position: relative;
+}
+
+.product-name-with-wishlist-icon {
+  align-items: flex-start;
+}
+
+.uploaded-project-card-container-1 {
+  background-color: #db558121;
+}

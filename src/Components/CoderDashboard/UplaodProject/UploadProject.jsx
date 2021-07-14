@@ -7,6 +7,7 @@ export const UploadProject = () => {
   const [projectDemoUrl, setProjectDemoUrl] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
   const [bidPrice, setMinimumBidPrice] = useState(0);
+  const [projectName, setProjectName] = useState("");
   const { coderDetails } = useCoderAuth();
 
   console.log("coder details", coderDetails);
@@ -19,6 +20,7 @@ export const UploadProject = () => {
         projectDemoUrl,
         projectDescription,
         bidPrice,
+        projectName,
       }
     );
 
@@ -27,6 +29,10 @@ export const UploadProject = () => {
 
   return (
     <form className="upload-project">
+      <input
+        placeholder="Enter Project Name"
+        onChange={(event) => setProjectName(event.target.value)}
+      />
       <input
         placeholder="Enter Project Demo Url"
         onChange={(event) => setProjectDemoUrl(event.target.value)}

@@ -16,3 +16,5 @@ export { CoderDashBoardSideNav } from "./CoderDashboard/CoderDashBoardSideNav/Co
 export { CoderDashBoardDefaultView } from "./CoderDashboard/CoderDashBoardDefaultView/CoderDashBoardDefaultView";
 export { CoderProfileEditingForm } from "./CoderDashboard/CoderProfileEditingForm/CoderProfileEditingForm";
 export { UploadProject } from "./CoderDashboard/UplaodProject/UploadProject";
+export { UploadedProjects } from "./CoderDashboard/UploadedProjects/UploadedProjects";
+export { UploadedProjectCard } from "./UploadedProjectCard/UploadedProjectCard";

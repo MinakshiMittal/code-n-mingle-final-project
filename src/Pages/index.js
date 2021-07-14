@@ -11,4 +11,4 @@ export { CoderDashBoard } from "./CoderDashBoard/CoderDashBoard";
 export { CoderProfileEditing } from "./CoderProfileEditing/CoderProfileEditing";
 export { RouteNotFound } from "./RouteNotFound/RouteNotFound";
 export { CoderProjectUploading } from "./CoderProjectUploading/CoderProjectUploading";
-// export { CoderUploadedprojects } from "./CoderUploadedProjects/CoderUploadedProjects";
+export { CoderUploadedProjects } from "./CoderUploadedProjects/CoderUploadedProjects";

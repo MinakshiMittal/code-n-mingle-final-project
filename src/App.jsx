@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import {
   Home,
@@ -9,24 +9,25 @@ import {
   BuyerSignUp,
   CoderLogin,
   CoderSignUp,
-  // ProjectBiddingPage,
   CoderDashBoard,
   CoderProfileEditing,
   RouteNotFound,
   CoderProjectUploading,
-  // CoderUploadedProjects,
+  CoderUploadedProjects,
 } from "./Pages";
-import {
-  CoderPrivateRoute,
-  // CoderDashBoardBody,
-  CreateABid,
-} from "./Components";
+import { CoderPrivateRoute, CreateABid } from "./Components";
+import { useCoderAuth } from "./Context";
 
 function App() {
+  const { isCoderLogin } = useCoderAuth();
+  console.log("lo", isCoderLogin);
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={isCoderLogin ? <Navigate to="/coder/dashboard" /> : <Home />}
+        />
         <Route
           path="available-projects"
           element={<AvailableProjectsListingPage />}
@@ -56,10 +57,10 @@ function App() {
           path="/coder/upload-a-project"
           element={<CoderProjectUploading />}
         />
-        {/* <Route
+        <Route
           path="/coder/uploaded-projects"
           element={<CoderUploadedProjects />}
-        /> */}
+        />
         <Route path="*" element={<RouteNotFound />} />
       </Routes>
     </div>

@@ -1,7 +1,10 @@
 import "./CoderDashBoardSideNav.css";
 import { Link } from "react-router-dom";
+import { useCoderAuth } from "../../../Context";
 
 export const CoderDashBoardSideNav = () => {
+  const { logout } = useCoderAuth();
+
   return (
     <div className="coder-side-nav">
       <ul className="nav-menu-list">
@@ -14,7 +17,9 @@ export const CoderDashBoardSideNav = () => {
         <Link to="/coder/upload-a-project">
           <li>Upload A Project</li>
         </Link>
-        <li>Uploaded Projects</li>
+        <Link to="/coder/uploaded-projects">
+          <li>Uploaded Projects</li>
+        </Link>
         <li>Bidded Projects</li>
         <li>Sold Projects</li>
         <li>Completed Projects</li>
@@ -24,7 +29,7 @@ export const CoderDashBoardSideNav = () => {
           <li>Create A Bid</li>
         </Link>
         <li>Current Project Deatils</li>
-        <li>Logout</li>
+        <li onClick={logout}>Logout</li>
       </ul>
     </div>
   );
