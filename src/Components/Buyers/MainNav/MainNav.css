@@ -1,0 +1,34 @@
+.page-main-menu {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #29333a;
+  /* #1d1d29c7; */
+  z-index: 2;
+  left: 0;
+  height: 10%;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.hero-image {
+  width: 4%;
+  padding: 0.4rem;
+}
+
+.hero-name {
+  flex-grow: 1;
+  font-size: 2rem;
+}
+
+.login,
+.signup {
+  color: white;
+  text-decoration: none;
+  margin-right: 2rem;
+}

@@ -13,3 +13,7 @@ export { RouteNotFound } from "./RouteNotFound/RouteNotFound";
 export { CoderProjectUploading } from "./CoderProjectUploading/CoderProjectUploading";
 export { CoderUploadedProjects } from "./CoderUploadedProjects/CoderUploadedProjects";
 export { UploadedProjectDisplayPage } from "./UploadedProjectDisplayPage/UploadedProjectDisplayPage";
+export { ProfileEditing } from "./Buyers/ProfileEditing/ProfileEditing";
+export { GettingStarted } from "./Buyers/GettingStarted/GettingStarted";
+export { CoderCreateABid } from "./CoderCreateABid/CoderCreateABid";
+export { CoderBiddedProjects } from "./CoderBiddedProjects/CoderBiddedProjects";

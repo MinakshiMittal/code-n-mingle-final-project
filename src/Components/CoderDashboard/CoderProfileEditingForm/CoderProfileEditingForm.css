@@ -1,4 +1,24 @@
 .profile-editing {
-  margin-left: 40%;
+  margin-left: 12%;
   margin-top: 5%;
+  /* max-width: 70%; */
+  /* flex: 70%; */
+  width: 100%;
+}
+
+.profile-editing-input {
+  background-color: #eee;
+  /* border: none; */
+  padding: 1rem;
+  margin: 0.5rem;
+  width: 50%;
+  border-radius: 0.5rem;
+}
+
+.profile-editing-submit-button {
+  border-radius: 0.5rem;
+  font-family: "Varela Round";
+  font-size: 1.3rem;
+  font-weight: 900;
+  background: #0d87ab;
 }

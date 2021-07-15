@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
-import { useCoderAuth } from "../../../Context";
-import "./CoderProfileEditingForm.css";
+import { useBuyerAuth } from "../../../../Context";
+import "./ProfileEditingForm.css";
 
-export const CoderProfileEditingForm = () => {
-  const { isCoderLogin, coderDetails, token } = useCoderAuth();
+export const ProfileEditingForm = () => {
+  const { buyerDetails, token } = useBuyerAuth();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,13 +13,11 @@ export const CoderProfileEditingForm = () => {
   const [profilePictureUrl, setProfilePictureUrl] = useState("");
   const [descriptionInDetail, setDescriptionInDetail] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
-  console.log("id", coderDetails);
-  console.log(isCoderLogin, "token?", token);
 
   const editDetailsHandler = async (event) => {
     event.preventDefault();
     const response = await axios.post(
-      `https://code-n-mingle-backend.mittalminakshi.repl.co/coder/${coderDetails}`,
+      `https://code-n-mingle-backend.mittalminakshi.repl.co/buyer/${buyerDetails}`,
       {
         firstName,
         lastName,
@@ -37,53 +35,40 @@ export const CoderProfileEditingForm = () => {
   return (
     <form className="profile-editing">
       <input
-        className="profile-editing-input"
         placeholder="First Name"
         onChange={(event) => setFirstName(event.target.value)}
       />
       <input
-        className="profile-editing-input"
         placeholder="Last Name"
         onChange={(event) => setLastName(event.target.value)}
       />
       <input
-        className="profile-editing-input"
         type="email"
         placeholder="email"
         onChange={(event) => setEmail(event.target.value)}
       />
       <input
-        className="profile-editing-input"
         placeholder="Enter your tech skills"
         onChange={(event) => setTechStack(event.target.value)}
       />
       <input
-        className="profile-editing-input"
         placeholder="bio"
         onChange={(event) => setBio(event.target.value)}
       />
       <input
-        className="profile-editing-input"
         placeholder="Enter url to upload profile picture"
         onChange={(event) => setProfilePictureUrl(event.target.value)}
       />
       <input
-        className="profile-editing-input"
         placeholder="Talk about yourself"
         onChange={(event) => setDescriptionInDetail(event.target.value)}
       />
       <input
-        className="profile-editing-input"
         placeholder="Mobile Number"
         type="number"
         onChange={(event) => setMobileNumber(event.target.value)}
       />
-      <button
-        className="profile-editing-submit-button"
-        onClick={editDetailsHandler}
-      >
-        Submit
-      </button>
+      <button onClick={editDetailsHandler}>Submit</button>
     </form>
   );
 };

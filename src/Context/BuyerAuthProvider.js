@@ -1,6 +1,6 @@
 import axios from "axios";
-import { createContext, useContext } from "react";
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const BuyerAuthContext = createContext();
 
@@ -24,16 +24,21 @@ const buyerLoginService = (email, password) => {
 };
 
 export const BuyerAuthProvider = ({ children }) => {
-  const { isUserLoggedIn, token: savedToken } = JSON.parse(
-    localStorage?.getItem("login")
-  ) || { isUserLoggedIn: false, token: null };
-
-  const [isUserLogin, setLogin] = useState(isUserLoggedIn);
-  const [token, setToken] = useState(savedToken);
-
-  const [buyerDetails, setBuyerDetails] = useState({
+  const {
+    isBuyerLoggedIn,
+    token: savedToken,
+    buyerId,
+  } = JSON.parse(localStorage?.getItem("login")) || {
+    isBuyerLoggedIn: false,
+    token: null,
     buyerId: null,
-  });
+  };
+
+  const [isBuyerLogin, setLogin] = useState(isBuyerLoggedIn);
+  const [token, setToken] = useState(savedToken);
+  const [buyerDetails, setBuyerDetails] = useState(buyerId);
+  const { state } = useLocation();
+  const navigate = useNavigate();
 
   const signUpBuyerWithDetails = async (
     firstName,
@@ -47,7 +52,6 @@ export const BuyerAuthProvider = ({ children }) => {
       email,
       password
     );
-    console.log(buyerSignUpResponse);
     if (buyerSignUpResponse.status === 200) {
       loginBuyerWithCredentials(email, password);
     }
@@ -56,9 +60,9 @@ export const BuyerAuthProvider = ({ children }) => {
   async function loginBuyerWithCredentials(email, password) {
     try {
       const buyerLoginResponse = await buyerLoginService(email, password);
-      console.log(buyerLoginResponse);
       if (buyerLoginResponse.status === 200) {
         loginBuyer(buyerLoginResponse.data);
+        navigate("/buyer/dashboard");
       }
     } catch (error) {
       console.error(error);
@@ -68,12 +72,10 @@ export const BuyerAuthProvider = ({ children }) => {
   const loginBuyer = ({ token, buyerId }) => {
     setToken(token);
     setLogin(true);
-    setBuyerDetails({
-      buyerId: buyerId,
-    });
+    setBuyerDetails(buyerId);
     localStorage.setItem(
       "login",
-      JSON.stringify({ isUserLoggedIn: true, token })
+      JSON.stringify({ isBuyerLoggedIn: true, token, buyerId })
     );
   };
 
@@ -81,12 +83,13 @@ export const BuyerAuthProvider = ({ children }) => {
     localStorage.removeItem("login");
     setLogin(false);
     setToken(null);
+    navigate("/");
   };
 
   return (
     <BuyerAuthContext.Provider
       value={{
-        isUserLogin,
+        isBuyerLogin,
         logout,
         token,
         signUpBuyerWithDetails,

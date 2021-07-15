@@ -1,0 +1,27 @@
+.coder-side-nav {
+  font-size: 1rem;
+  background-color: #1e1e30;
+  position: fixed;
+  height: 100%;
+  color: #e1ffff;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex: 30%;
+  max-width: 30%;
+  padding: 0.8rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.nav-menu-list {
+  font-size: 1rem;
+  font-weight: 800;
+  padding-inline-start: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}

@@ -26,7 +26,9 @@ export const AvailableProjectCard = ({ availableProject }) => {
         </div>
         <button
           className="button primary-btn"
-          onClick={() => navigate(`/project/create-a-bid`)}
+          onClick={() =>
+            navigate(`/project/${availableProject._id}/create-a-bid`)
+          }
         >
           CREATE A BID
         </button>

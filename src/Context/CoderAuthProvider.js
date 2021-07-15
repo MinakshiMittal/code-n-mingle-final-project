@@ -40,8 +40,6 @@ export const CoderAuthProvider = ({ children }) => {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  console.log(state);
-
   const signUpCoderWithDetails = async (
     firstName,
     lastName,
@@ -54,7 +52,6 @@ export const CoderAuthProvider = ({ children }) => {
       email,
       password
     );
-    console.log(coderSignUpResponse);
     if (coderSignUpResponse.status === 200) {
       loginCoderWithCredentials(email, password);
     }
@@ -63,13 +60,9 @@ export const CoderAuthProvider = ({ children }) => {
   async function loginCoderWithCredentials(email, password) {
     try {
       const coderLoginResponse = await coderLoginService(email, password);
-      console.log(coderLoginResponse);
       if (coderLoginResponse.status === 200) {
         loginCoder(coderLoginResponse.data);
         navigate("/coder/dashboard");
-        // navigate(state ? state.from : "/");
-        // }
-        // else
       }
     } catch (error) {
       console.error(error);
