@@ -25,7 +25,6 @@ export const CoderDashBoardSideNav = () => {
         </Link>
         <li>Sold Projects</li>
         <li>Completed Projects</li>
-        <li>CNM Score</li>
         <li>Buyer Feedback</li>
         <Link to="/available-projects">
           <li>Create A Bid</li>

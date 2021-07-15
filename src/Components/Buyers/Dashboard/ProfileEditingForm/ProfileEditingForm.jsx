@@ -4,7 +4,7 @@ import { useBuyerAuth } from "../../../../Context";
 import "./ProfileEditingForm.css";
 
 export const ProfileEditingForm = () => {
-  const { buyerDetails, token } = useBuyerAuth();
+  const { buyerDetails } = useBuyerAuth();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");

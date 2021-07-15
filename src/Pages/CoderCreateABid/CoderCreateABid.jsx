@@ -2,21 +2,29 @@ import "./CoderCreateABid.css";
 import axios from "axios";
 import { useCoderAuth } from "../../Context";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const CoderCreateABid = () => {
-  const { token, coderDetails } = useCoderAuth();
+  const { projectId } = useParams();
+  const { token } = useCoderAuth();
   const navigate = useNavigate();
-  const [coder, setCoder] = useState();
-  const [bidPrice, setBidPrice] = useState("");
-  const [bidDeliveryTimeInDays, setBidDeliveryTimeInDays] = useState("");
+  const [bidPriceByCoder, setBidPrice] = useState();
+  const [bidDeliveryTimeInDaysByCoder, setBidDeliveryTimeInDays] = useState();
+  const [project, setProjects] = useState({});
+  console.log("delvery", bidDeliveryTimeInDaysByCoder);
 
-  console.log(coderDetails);
-  console.log(bidPrice, bidDeliveryTimeInDays);
-
-  const bidHandler = async () => {
+  const bidHandler = async (event) => {
+    event.preventDefault();
     return await axios.post(
-      "https://code-n-mingle-backend.mittalminakshi.repl.co/projects/create-a-bid"
+      "https://code-n-mingle-backend.mittalminakshi.repl.co/buyer-projects/create-a-bid",
+      {
+        project: projectId,
+        bidPriceByCoder,
+        bidDeliveryTimeInDaysByCoder,
+      },
+      {
+        headers: { authorization: token },
+      }
     );
   };
 
@@ -24,59 +32,73 @@ export const CoderCreateABid = () => {
     (async () => {
       try {
         const response = await axios.get(
-          "https://code-n-mingle-backend.mittalminakshi.repl.co/buyer-projects/create-a-bid",
-          { headers: { authorization: token } }
+          `https://code-n-mingle-backend.mittalminakshi.repl.co/available-projects/${projectId}`
         );
-        console.log("res", response);
-        // setCoder(response.data);
+        console.log(response);
+        if (response.status === 200) {
+          setProjects(response.data.project);
+        }
       } catch (error) {
         if (error.response.status === 401) {
           return navigate("/coder/login");
         }
-        setCoder("error");
       }
     })();
-  }, [token, navigate]);
+  }, [navigate, setProjects, projectId]);
 
-  console.log(coder);
+  const {
+    name,
+    category,
+    deliveryTimeInDays,
+    description,
+    imageUrl,
+    minBidPrice,
+    techStack,
+    whatProjectIncludes,
+  } = project;
+
   return (
     <>
       <div className="create-a-bid">
-        <h1 className="project-name">Project Name</h1>
+        <h1 className="project-name">{name}</h1>
         <div className="bid-container">
-          <img
-            className="bidding-project-image"
-            src="https://images.unsplash.com/photo-1516131206008-dd041a9764fd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
-            alt="project"
-          />
+          <img className="bidding-project-image" src={imageUrl} alt="project" />
           <div className="create-a-bid-container">
             <h2 className="bid-container-title">Create A Bid</h2>
             <input
+              onChange={(event) => setBidPrice(event.target.value)}
               className="bidding-input"
+              type="number"
               placeholder="Enter your bidding price"
             />
             <input
+              onChang={(event) => setBidDeliveryTimeInDays(event.target.value)}
+              type="number"
               className="bidding-input"
               placeholder="Enter your delivery time in days"
             />
-            <button className="confirm-bid-button">Confirm Bid</button>
+            <button className="confirm-bid-button" onClick={bidHandler}>
+              Confirm Bid
+            </button>
           </div>
         </div>
-        <p className="project-bid-price">Project Bid Price</p>
-        <p className="project-delivery-time">Project Delivery Days</p>
-        <p className="project-category-name">Category Name</p>
-        <p className="project-description">Project Description</p>
+        <p className="project-bid-price">Project Bid Price: ₹{minBidPrice} </p>
+        <p className="project-delivery-time">
+          Project Delivery Days: {deliveryTimeInDays}
+        </p>
+        <p className="project-category-name">Category: {category}</p>
+        <p className="project-description">{description}</p>
         <h3 className="what-project-includes-title">What Project Includes</h3>
         <ul className="what-project-includes">
-          <li>abcd</li>
-          <li>efgh</li>
-          <li>jklm</li>
+          {whatProjectIncludes?.map((detail) => {
+            return <li>{detail}</li>;
+          })}
         </ul>
         <h3 className="tech-stack-title">Tech Stack Title</h3>
         <ul className="tech-stack">
-          <li>abcd</li>
-          <li>efgh</li>
-          <li>jklm</li>
+          {techStack?.map((tech) => {
+            return <li>{tech}</li>;
+          })}
         </ul>
       </div>
     </>

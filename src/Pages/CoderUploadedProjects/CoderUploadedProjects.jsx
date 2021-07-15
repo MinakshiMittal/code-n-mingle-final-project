@@ -1,6 +1,6 @@
 import axios from "axios";
 import "./CoderUploadedProjects.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
   CoderDashBoardSideNav,
   MainNav,
@@ -27,7 +27,7 @@ export const CoderUploadedProjects = () => {
         console.log(error);
       }
     })();
-  }, [uploadedProjects]);
+  }, [uploadedProjects, coderDetails, setUploadedProjects]);
 
   console.log("first", uploadedProjects);
 

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { CategoriesListing, HowWeWork, MainNav } from "../../../Components";
+import { MainNav } from "../../../Components";
 import "./GettingStarted.css";
 
 export const GettingStarted = () => {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const CoderAuthContext = createContext();
 
@@ -37,7 +37,6 @@ export const CoderAuthProvider = ({ children }) => {
   const [isCoderLogin, setLogin] = useState(isCoderLoggedIn);
   const [token, setToken] = useState(savedToken);
   const [coderDetails, setCoderDetails] = useState(coderId);
-  const { state } = useLocation();
   const navigate = useNavigate();
 
   const signUpCoderWithDetails = async (

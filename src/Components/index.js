@@ -21,3 +21,4 @@ export { UploadedProjectCard } from "./UploadedProjectCard/UploadedProjectCard";
 export { DefaultView } from "./Buyers/Dashboard/DefaultView/DefaultView";
 export { SideNav } from "./Buyers/Dashboard/SideNav/SideNav";
 export { ProfileEditingForm } from "./Buyers/Dashboard/ProfileEditingForm/ProfileEditingForm";
+export { BiddedProjectCard } from "./BiddedProjectCard/BiddedProjectCard";

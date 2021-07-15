@@ -24,7 +24,7 @@ export const UploadedProjects = () => {
         console.log(error);
       }
     })();
-  }, [uploadedProject]);
+  }, [uploadedProject, coderDetails, uploadedProjectId]);
 
   return (
     <div className="video-player">

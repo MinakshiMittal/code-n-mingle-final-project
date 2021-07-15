@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const BuyerAuthContext = createContext();
 
@@ -37,7 +37,6 @@ export const BuyerAuthProvider = ({ children }) => {
   const [isBuyerLogin, setLogin] = useState(isBuyerLoggedIn);
   const [token, setToken] = useState(savedToken);
   const [buyerDetails, setBuyerDetails] = useState(buyerId);
-  const { state } = useLocation();
   const navigate = useNavigate();
 
   const signUpBuyerWithDetails = async (

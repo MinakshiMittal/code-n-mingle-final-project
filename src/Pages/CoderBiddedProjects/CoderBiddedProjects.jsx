@@ -1,11 +1,20 @@
+import {
+  CoderDashBoardSideNav,
+  MainNav,
+  BiddedProjectCard,
+} from "../../Components";
+import "./CoderBiddedProjects.css";
+
 export const CoderBiddedProjects = () => {
   return (
-    <div>
-      <h1>Project Name</h1>
-      <p>Bid Price</p>
-      <p>Delivery Time</p>
-      <p>Bidded Price</p>
-      <p>Bidded Deivery Time</p>
-    </div>
+    <>
+      <MainNav />
+      <div className="coder-dashboard">
+        <CoderDashBoardSideNav />
+        <div className="all-bidded-projects-container">
+          <BiddedProjectCard />
+        </div>
+      </div>
+    </>
   );
 };
