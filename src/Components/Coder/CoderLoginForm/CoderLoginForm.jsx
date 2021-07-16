@@ -33,7 +33,7 @@ export const CoderLoginForm = () => {
         <button onClick={loginHandler}>Sign In</button>
         <span>
           Don't have any account?
-          <Link to="/coder/signup">Sign Up</Link>
+          <Link to="/buyer/signup">Sign Up</Link>
         </span>
       </form>
     </div>
