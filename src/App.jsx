@@ -15,14 +15,20 @@ import {
   CoderProjectUploading,
   CoderUploadedProjects,
   UploadedProjectDisplayPage,
-  GettingStarted,
-  ProfileEditing,
+  BuyerGettingStarted,
+  BuyerProfileEditing,
   CoderCreateABid,
   CoderBiddedProjects,
+  BuyerDashBoard,
+  BuyerProjectUploading,
+  BuyerUploadedProjects,
+  BuyerUploadedProjectDisplayPage,
+  CoderReviews,
+  BuyerReviews,
 } from "./Pages";
 import { CoderPrivateRoute } from "./Components";
 import { useBuyerAuth, useCoderAuth } from "./Context";
-import { DashBoard } from "./Pages/Buyers/DashBoard/DashBoard";
+import { CurrentProjectDetails } from "./Pages/CurrentProjectDetails/CurrentProjectDetails";
 
 function App() {
   const { isCoderLogin } = useCoderAuth();
@@ -81,14 +87,45 @@ function App() {
             isBuyerLogin ? (
               <Navigate to="/buyer/dashboard" />
             ) : (
-              <GettingStarted />
+              <BuyerGettingStarted />
             )
           }
         />
-        <Route path="/buyer/dashboard" element={<DashBoard />} />
-        <Route path="/buyer/login" element={<BuyerLogin />} />
-        <Route path="/buyer/signup" element={<BuyerSignUp />} />
-        <Route path="/buyer/profile-editing" element={<ProfileEditing />} />
+        <Route path="/buyer/dashboard" element={<BuyerDashBoard />} />
+        <Route
+          path="/buyer/login"
+          element={
+            isBuyerLogin ? <Navigate to="/buyer/dashboard" /> : <BuyerLogin />
+          }
+        />
+        <Route
+          path="/buyer/signup"
+          element={
+            isBuyerLogin ? <Navigate to="/buyer/dashboard" /> : <BuyerSignUp />
+          }
+        />
+        <Route
+          path="/buyer/profile-editing"
+          element={<BuyerProfileEditing />}
+        />
+        <Route
+          path="/buyer/upload-a-project"
+          element={<BuyerProjectUploading />}
+        />
+        <Route
+          path="/buyer/uploaded-projects"
+          element={<BuyerUploadedProjects />}
+        />
+        <Route
+          path="/buyer/uploaded-project/:uploadedProjectId"
+          element={<BuyerUploadedProjectDisplayPage />}
+        />
+        <Route
+          path="/coder/current-project-details"
+          element={<CurrentProjectDetails />}
+        />
+        <Route path="/coder/reviews" element={<CoderReviews />} />
+        <Route path="/buyer/reviews" element={<BuyerReviews />} />
         <Route path="*" element={<RouteNotFound />} />
       </Routes>
     </div>

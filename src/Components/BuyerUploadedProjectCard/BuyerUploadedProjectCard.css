@@ -1,0 +1,25 @@
+.dashboard-uploaded-projects-cards-container {
+  width: 30%;
+}
+
+.uploaded-project-card-container-1 {
+  margin: 1rem;
+  border: 1px solid #adeef1;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  word-wrap: break-word;
+  box-shadow: 3px 2px 8px #adeef1;
+}
+
+.uploaded-project-list.product-name-with-wishlist-icon {
+  align-items: flex-start;
+  color: #ffffff;
+}
+
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 1rem 0 1rem;
+}

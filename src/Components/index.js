@@ -1,5 +1,5 @@
 export { CategoriesListing } from "./CategoriesListing";
-export { MainNav } from "./MainNav/MainNav";
+export { CoderMainNav } from "./CoderMainNav/CoderMainNav";
 export { AvailableProjectCard } from "./AvailableProjectCard/AvailableProjectCard";
 export { CategoryCard } from "./CategoryCard/CategoryCard";
 export { HowWeWork } from "./HowWeWork/HowWeWork";
@@ -11,14 +11,16 @@ export { CoderSignUpForm } from "./Coder/CoderSignUpForm/CoderSignUpForm";
 export { BuyerOverlayContainer } from "./Buyer/BuyerOverlayContainer";
 export { ErrorNotice } from "./ErrorNotice";
 export { CoderPrivateRoute } from "./CoderPrivateRoute";
-
+export { BuyerDashBoardSideNav } from "./BuyerDashBoard/BuyerDashBoardSideNav/BuyerDashBoardSideNav";
 export { CoderDashBoardSideNav } from "./CoderDashboard/CoderDashBoardSideNav/CoderDashBoardSideNav";
 export { CoderDashBoardDefaultView } from "./CoderDashboard/CoderDashBoardDefaultView/CoderDashBoardDefaultView";
 export { CoderProfileEditingForm } from "./CoderDashboard/CoderProfileEditingForm/CoderProfileEditingForm";
 export { UploadProject } from "./CoderDashboard/UplaodProject/UploadProject";
 export { UploadedProjects } from "./CoderDashboard/UploadedProjects/UploadedProjects";
 export { UploadedProjectCard } from "./UploadedProjectCard/UploadedProjectCard";
-export { DefaultView } from "./Buyers/Dashboard/DefaultView/DefaultView";
-export { SideNav } from "./Buyers/Dashboard/SideNav/SideNav";
-export { ProfileEditingForm } from "./Buyers/Dashboard/ProfileEditingForm/ProfileEditingForm";
 export { BiddedProjectCard } from "./BiddedProjectCard/BiddedProjectCard";
+export { BuyerDashBoardDefaultView } from "./BuyerDashBoard/BuyerDashBoardDefaultView/BuyerDashBoardDefaultView";
+export { BuyerProfileEditingForm } from "./BuyerDashBoard/BuyerProfileEditingForm/BuyerProfileEditingForm";
+export { BuyerMainNav } from "./BuyerMainNav/BuyerMainNav";
+export { BuyerUploadProject } from "./BuyerDashBoard/BuyerUploadProject/BuyerUploadProject";
+export { BuyerUploadedProjectCard } from "./BuyerUploadedProjectCard/BuyerUploadedProjectCard";

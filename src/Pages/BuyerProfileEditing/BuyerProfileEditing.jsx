@@ -1,14 +1,14 @@
 import {
   BuyerDashBoardSideNav,
   BuyerProfileEditingForm,
-  CoderMainNav,
-} from "../../../Components";
-import "./ProfileEditing.css";
+  BuyerMainNav,
+} from "../../Components";
+import "./BuyerProfileEditing.css";
 
-export const ProfileEditing = () => {
+export const BuyerProfileEditing = () => {
   return (
     <>
-      <CoderMainNav />
+      <BuyerMainNav />
       <div className="coder-dashboard">
         <BuyerDashBoardSideNav />
         <BuyerProfileEditingForm />

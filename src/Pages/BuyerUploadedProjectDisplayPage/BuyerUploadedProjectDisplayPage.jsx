@@ -1,8 +1,8 @@
-import { CoderMainNav, UploadedProjectCard } from "../../Components";
+import { BuyerMainNav, BuyerUploadedProjectCard } from "../../Components";
 import { useParams } from "react-router";
 import { useUploadedProjects } from "../../Context";
 
-export const UploadedProjectDisplayPage = () => {
+export const BuyerUploadedProjectDisplayPage = () => {
   const { uploadedProjectId } = useParams();
   console.log("projectId", uploadedProjectId);
   const { uploadedProjects } = useUploadedProjects();
@@ -13,9 +13,10 @@ export const UploadedProjectDisplayPage = () => {
   console.log("beforepassing", uploadedProject);
   return (
     <>
-      <CoderMainNav />
+      <BuyerMainNav />
       <div className="display-project-container"></div>
-      <UploadedProjectCard uploadedProject={uploadedProject} withDetails />;
+      <BuyerUploadedProjectCard uploadedProject={uploadedProject} withDetails />
+      ;
     </>
   );
 };

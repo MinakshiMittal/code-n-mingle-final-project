@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
-import { useBuyerAuth } from "../../../../Context";
-import "./ProfileEditingForm.css";
+import { useBuyerAuth } from "../../../Context";
+import "./BuyerProfileEditingForm.css";
 
-export const ProfileEditingForm = () => {
+export const BuyerProfileEditingForm = () => {
   const { buyerDetails } = useBuyerAuth();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");

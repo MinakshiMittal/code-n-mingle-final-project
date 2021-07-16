@@ -1,6 +1,6 @@
 import {
   CoderDashBoardSideNav,
-  MainNav,
+  CoderMainNav,
   BiddedProjectCard,
 } from "../../Components";
 import "./CoderBiddedProjects.css";
@@ -8,7 +8,7 @@ import "./CoderBiddedProjects.css";
 export const CoderBiddedProjects = () => {
   return (
     <>
-      <MainNav />
+      <CoderMainNav />
       <div className="coder-dashboard">
         <CoderDashBoardSideNav />
         <div className="all-bidded-projects-container">

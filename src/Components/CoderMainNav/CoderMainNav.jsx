@@ -1,8 +1,8 @@
-import "./MainNav.css";
+import "./CoderMainNav.css";
 import { Link } from "react-router-dom";
 import { useCoderAuth } from "../../Context";
 
-export const MainNav = () => {
+export const CoderMainNav = () => {
   const { isCoderLogin, logout } = useCoderAuth();
   return (
     <div className="page-main-menu">

@@ -1,13 +1,13 @@
 import {
   CoderDashBoardSideNav,
-  MainNav,
+  CoderMainNav,
   UploadProject,
 } from "../../Components";
 
 export const CoderProjectUploading = () => {
   return (
     <>
-      <MainNav />
+      <CoderMainNav />
       <div className="coder-dashboard">
         <CoderDashBoardSideNav />
         <UploadProject />

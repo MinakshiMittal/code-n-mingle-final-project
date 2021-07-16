@@ -23,13 +23,16 @@ export const CoderDashBoardSideNav = () => {
         <Link to="/coder/bidded-projects">
           <li>Bidded Projects</li>
         </Link>
-        <li>Sold Projects</li>
-        <li>Completed Projects</li>
-        <li>Buyer Feedback</li>
+        {/* <li>Completed Projects</li> */}
+        <Link to="/coder/reviews">
+          <li>Reviews</li>
+        </Link>
         <Link to="/available-projects">
           <li>Create A Bid</li>
         </Link>
-        <li>Current Project Details</li>
+        <Link to="/coder/current-project-details">
+          <li>Current Project Details</li>
+        </Link>
         <li onClick={logout}>Logout</li>
       </ul>
     </div>

@@ -1,14 +1,14 @@
 import {
   BuyerSignUpForm,
   BuyerOverlayContainer,
-  MainNav,
+  BuyerMainNav,
 } from "../../Components";
 import "./Buyer.css";
 
 export const BuyerSignUp = () => {
   return (
     <>
-      <MainNav />
+      <BuyerMainNav />
       <div className="credentials-container">
         <div class="container right-panel-active" id="container">
           <BuyerSignUpForm />

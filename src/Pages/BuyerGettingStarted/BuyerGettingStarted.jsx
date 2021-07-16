@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router";
-import { MainNav } from "../../../Components";
-import "./GettingStarted.css";
+import { BuyerMainNav } from "../../Components";
+import "./BuyerGettingStarted.css";
 
-export const GettingStarted = () => {
+export const BuyerGettingStarted = () => {
   const navigate = useNavigate();
 
   return (
     <>
-      <MainNav />
+      <BuyerMainNav />
       <div className="home-page">
         <div
           className="image-container"
@@ -41,8 +41,6 @@ export const GettingStarted = () => {
         >
           Get Started - It's free
         </button>
-        {/* <CategoriesListing />
-        <HowWeWork /> */}
       </div>
     </>
   );

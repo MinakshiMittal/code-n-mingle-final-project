@@ -33,7 +33,7 @@ export const UploadedProjects = () => {
       </div>
       <div>{uploadedProject.bidPrice}</div>
       <video
-        src={uploadedProject.projectDemoUrl}
+        src="https://www.youtube.com/embed/lYNwOJeY6_E"
         className="video-play-screen"
         controls
         autoPlay

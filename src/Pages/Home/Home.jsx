@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { CategoriesListing, HowWeWork, MainNav } from "../../Components";
+import { CategoriesListing, HowWeWork, CoderMainNav } from "../../Components";
 import "./Home.css";
 
 export const Home = () => {
@@ -7,7 +7,7 @@ export const Home = () => {
 
   return (
     <>
-      <MainNav />
+      <CoderMainNav />
       <div className="home-page">
         <div
           className="image-container"

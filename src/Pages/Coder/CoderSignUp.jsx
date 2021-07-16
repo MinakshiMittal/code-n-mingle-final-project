@@ -1,14 +1,14 @@
 import {
   CoderSignUpForm,
   CoderOverlayContainer,
-  MainNav,
+  CoderMainNav,
 } from "../../Components";
 import "./Coder.css";
 
 export const CoderSignUp = () => {
   return (
     <>
-      <MainNav />
+      <CoderMainNav />
       <div className="credentials-container">
         <div className="container right-panel-active" id="container">
           <CoderSignUpForm />

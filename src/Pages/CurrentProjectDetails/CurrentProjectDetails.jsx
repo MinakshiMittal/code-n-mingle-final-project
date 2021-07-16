@@ -1,11 +1,11 @@
-import "./CoderCreateABid.css";
+import "./CurrentProjectDetails.css";
 import axios from "axios";
 import { useCoderAuth } from "../../Context";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-export const CoderCreateABid = () => {
-  const { projectId } = useParams();
+export const CurrentProjectDetails = () => {
+  const projectId = "60d978ca2045a701fcfd2416";
   const { token } = useCoderAuth();
   const navigate = useNavigate();
   const [bidPriceByCoder, setBidPrice] = useState(0);
@@ -63,22 +63,22 @@ export const CoderCreateABid = () => {
         <div className="bid-container">
           <img className="bidding-project-image" src={imageUrl} alt="project" />
           <div className="create-a-bid-container">
-            <h2 className="bid-container-title">Create A Bid</h2>
+            <h2 className="bid-container-title">Your Bid Details</h2>
             <input
-              onChange={(event) => setBidPrice(event.target.value)}
+              value="₹9000"
               className="bidding-input"
-              type="number"
+              type="text"
               placeholder="Enter your bidding price"
             />
             <input
-              onChange={(event) => setBidDeliveryTimeInDays(event.target.value)}
-              type="number"
+              value="9 days"
+              type="text"
               className="bidding-input"
               placeholder="Enter your delivery time in days"
             />
-            <button className="confirm-bid-button" onClick={bidHandler}>
+            {/* <button className="confirm-bid-button" onClick={bidHandler}>
               Confirm Bid
-            </button>
+            </button> */}
           </div>
         </div>
         <p className="project-bid-price">Project Bid Price: ₹{minBidPrice} </p>

@@ -1,9 +1,9 @@
-import "./SideNav.css";
+import "./BuyerDashBoardSideNav.css";
 import { Link } from "react-router-dom";
-import { useCoderAuth } from "../../../../Context";
+import { useBuyerAuth } from "../../../Context";
 
-export const SideNav = () => {
-  const { logout } = useCoderAuth();
+export const BuyerDashBoardSideNav = () => {
+  const { logout } = useBuyerAuth();
 
   return (
     <div className="coder-side-nav">
@@ -17,12 +17,16 @@ export const SideNav = () => {
         <Link to="/buyer/upload-a-project">
           <li>Upload A Project</li>
         </Link>
-        <li>Uploaded Projects</li>
+        <Link to="/buyer/uploaded-projects">
+          <li>Uploaded Projects</li>
+        </Link>
         <li>Bidded Projects</li>
         <li>Projects In Progress</li>
         <li>Completed Projects</li>
         <li>Bought Projects</li>
-        <li>Coder Feedback</li>
+        <Link to="/buyer/reviews">
+          <li>Reviews</li>
+        </Link>
 
         <li>Buy A Project</li>
 

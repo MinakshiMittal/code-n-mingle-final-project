@@ -14,6 +14,14 @@ export { CoderProjectUploading } from "./CoderProjectUploading/CoderProjectUploa
 export { CoderUploadedProjects } from "./CoderUploadedProjects/CoderUploadedProjects";
 export { UploadedProjectDisplayPage } from "./UploadedProjectDisplayPage/UploadedProjectDisplayPage";
 export { ProfileEditing } from "./Buyers/ProfileEditing/ProfileEditing";
-export { GettingStarted } from "./Buyers/GettingStarted/GettingStarted";
 export { CoderCreateABid } from "./CoderCreateABid/CoderCreateABid";
 export { CoderBiddedProjects } from "./CoderBiddedProjects/CoderBiddedProjects";
+export { BuyerGettingStarted } from "./BuyerGettingStarted/BuyerGettingStarted";
+export { BuyerDashBoard } from "./BuyerDashBoard/BuyerDashBoard";
+export { BuyerProfileEditing } from "./BuyerProfileEditing/BuyerProfileEditing";
+export { BuyerProjectUploading } from "./BuyerProjectUploading/BuyerProjectUploading";
+export { BuyerUploadedProjects } from "./BuyerUploadedProjects/BuyerUploadedProjects";
+export { BuyerUploadedProjectDisplayPage } from "./BuyerUploadedProjectDisplayPage/BuyerUploadedProjectDisplayPage";
+export { CurrentProjectDetails } from "./CurrentProjectDetails/CurrentProjectDetails";
+export { CoderReviews } from "./CoderReviews/CoderReviews";
+export { BuyerReviews } from "./BuyerReviews/BuyerReviews";

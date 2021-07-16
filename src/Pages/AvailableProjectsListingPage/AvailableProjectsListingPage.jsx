@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { AvailableProjectCard, MainNav } from "../../Components";
+import { AvailableProjectCard, CoderMainNav } from "../../Components";
 import "./AvailableProjectsListingPage.css";
 
 export const AvailableProjectsListingPage = () => {
@@ -8,7 +8,6 @@ export const AvailableProjectsListingPage = () => {
 
   useEffect(
     () =>
-      // setTimeout(() => {
       (async () => {
         try {
           const { data, status } = await axios.get(
@@ -23,13 +22,12 @@ export const AvailableProjectsListingPage = () => {
           console.error(error);
         }
       })(),
-    // }, 1000),
     []
   );
 
   return (
     <>
-      <MainNav />
+      <CoderMainNav />
       <div className="available-projects-container">
         {availableProjects?.map((availableProject) => {
           return <AvailableProjectCard availableProject={availableProject} />;

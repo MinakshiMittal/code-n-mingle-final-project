@@ -1,22 +1,23 @@
 import axios from "axios";
-import "./CoderUploadedProjects.css";
+import "./BuyerUploadedProjects.css";
 import { useEffect } from "react";
 import {
-  CoderDashBoardSideNav,
-  CoderMainNav,
-  UploadedProjectCard,
+  BuyerDashBoardSideNav,
+  BuyerMainNav,
+  BuyerUploadedProjectCard,
 } from "../../Components";
 import { useCoderAuth, useUploadedProjects } from "../../Context";
 
-export const CoderUploadedProjects = () => {
+export const BuyerUploadedProjects = () => {
   const { coderDetails } = useCoderAuth();
+  const buyerId = "60edcbe68b91d600258b5d69";
   const { uploadedProjects, setUploadedProjects } = useUploadedProjects();
 
   useEffect(() => {
     (async () => {
       try {
         const response = await axios.get(
-          `https://code-n-mingle-backend.mittalminakshi.repl.co/coder/${coderDetails}/uploaded-projects`
+          `https://code-n-mingle-backend.mittalminakshi.repl.co/coder/${buyerId}/uploaded-projects`
         );
         console.log("up", response.data);
         if (response.status === 200) {
@@ -33,14 +34,16 @@ export const CoderUploadedProjects = () => {
 
   return (
     <>
-      <CoderMainNav />
+      <BuyerMainNav />
       <div className="coder-dashboard">
-        <CoderDashBoardSideNav />
+        <BuyerDashBoardSideNav />
 
         <div className="all-uploaded-projects-container">
           {uploadedProjects?.map((uploadedProject) => {
             console.log(uploadedProject);
-            return <UploadedProjectCard uploadedProject={uploadedProject} />;
+            return (
+              <BuyerUploadedProjectCard uploadedProject={uploadedProject} />
+            );
           })}
         </div>
       </div>

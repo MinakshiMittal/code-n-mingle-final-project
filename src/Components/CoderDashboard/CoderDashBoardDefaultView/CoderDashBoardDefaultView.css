@@ -15,14 +15,13 @@
 .card-container-3,
 .card-container-4 {
   height: 38vh;
-
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
   border: 2px solid #6e7582;
   margin: 1rem;
   border-radius: 0.8rem;
   position: relative;
+  justify-content: center;
 }
 
 .product-name-with-wishlist-icon {
@@ -49,10 +48,6 @@
 
 .dashboard-card-container {
   width: 50%;
-}
-
-.product-name-with-wishlist-icon {
-  flex-grow: 1;
 }
 
 .card-container.primary-btn {

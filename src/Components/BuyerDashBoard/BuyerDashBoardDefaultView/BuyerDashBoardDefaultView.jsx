@@ -1,6 +1,6 @@
-import "./DefaultView.css";
+import "./BuyerDashBoardDefaultView.css";
 
-export const DefaultView = () => {
+export const BuyerDashBoardDefaultView = () => {
   return (
     <div className="dashboard-cards-container">
       <div className="dashboard-card-container">

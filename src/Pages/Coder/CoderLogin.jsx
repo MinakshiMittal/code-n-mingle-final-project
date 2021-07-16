@@ -1,14 +1,14 @@
 import {
   CoderLoginForm,
   CoderOverlayContainer,
-  MainNav,
+  CoderMainNav,
 } from "../../Components";
 import "./Coder.css";
 
 export const CoderLogin = () => {
   return (
     <>
-      <MainNav />
+      <CoderMainNav />
       <div className="credentials-container">
         <div className="container" id="container">
           <CoderLoginForm />
