@@ -24,7 +24,13 @@ export const CategoriesListing = () => {
 
   return (
     <>
-      <h2 style={{ fontSize: "3rem", margin: "2rem 1rem 1rem 1rem" }}>
+      <h2
+        style={{
+          fontSize: "3rem",
+          margin: "2rem 1rem 1rem 1rem",
+          color: "white",
+        }}
+      >
         Professional Services
       </h2>
       <div

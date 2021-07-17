@@ -25,6 +25,7 @@ import {
   BuyerUploadedProjectDisplayPage,
   CoderReviews,
   BuyerReviews,
+  BuyerBiddedProjects,
 } from "./Pages";
 import { CoderPrivateRoute } from "./Components";
 import { useBuyerAuth, useCoderAuth } from "./Context";
@@ -115,6 +116,10 @@ function App() {
         <Route
           path="/buyer/uploaded-projects"
           element={<BuyerUploadedProjects />}
+        />
+        <Route
+          path="/buyer/bidded-projects"
+          element={<BuyerBiddedProjects />}
         />
         <Route
           path="/buyer/uploaded-project/:uploadedProjectId"

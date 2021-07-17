@@ -13,7 +13,6 @@ export { RouteNotFound } from "./RouteNotFound/RouteNotFound";
 export { CoderProjectUploading } from "./CoderProjectUploading/CoderProjectUploading";
 export { CoderUploadedProjects } from "./CoderUploadedProjects/CoderUploadedProjects";
 export { UploadedProjectDisplayPage } from "./UploadedProjectDisplayPage/UploadedProjectDisplayPage";
-export { ProfileEditing } from "./Buyers/ProfileEditing/ProfileEditing";
 export { CoderCreateABid } from "./CoderCreateABid/CoderCreateABid";
 export { CoderBiddedProjects } from "./CoderBiddedProjects/CoderBiddedProjects";
 export { BuyerGettingStarted } from "./BuyerGettingStarted/BuyerGettingStarted";
@@ -25,3 +24,4 @@ export { BuyerUploadedProjectDisplayPage } from "./BuyerUploadedProjectDisplayPa
 export { CurrentProjectDetails } from "./CurrentProjectDetails/CurrentProjectDetails";
 export { CoderReviews } from "./CoderReviews/CoderReviews";
 export { BuyerReviews } from "./BuyerReviews/BuyerReviews";
+export { BuyerBiddedProjects } from "./BuyerBiddedProjects/BuyerBiddedProjects";

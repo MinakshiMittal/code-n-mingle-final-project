@@ -1,13 +1,33 @@
 .video-player {
-  /* margin-left: 15%; */
-  margin-top: 2%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: #161625;
 }
 
 .video-play-screen {
-  width: 70%;
-  height: auto;
+  width: 700px;
+  height: 300px;
+}
+
+.product-name-with-wishlist-icon > h4 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 1.8rem;
+  padding-bottom: 2rem;
+}
+
+.uploaded-project-list.product-name-with-wishlist-icon {
+  flex-grow: 0;
+}
+
+.bid-price-container {
+  align-self: flex-start;
+  margin-left: 10rem;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #ff5a6e;
 }

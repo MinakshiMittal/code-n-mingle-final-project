@@ -73,7 +73,6 @@ export const Home = () => {
           Get Started - It's free
         </button>
         <CategoriesListing />
-        <HowWeWork />
       </div>
     </>
   );

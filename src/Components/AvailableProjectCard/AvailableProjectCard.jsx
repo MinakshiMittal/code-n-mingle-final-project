@@ -13,7 +13,7 @@ export const AvailableProjectCard = ({ availableProject }) => {
           alt="project"
         />
         <div className="product-name-with-wishlist-icon">
-          <h4>{availableProject.name}</h4>
+          <h4 style={{ color: "white" }}>{availableProject.name}</h4>
           <i className="fas fa-heart"></i>
         </div>
         <div className="product-price">

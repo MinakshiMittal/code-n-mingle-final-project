@@ -18,17 +18,16 @@ export const CoderMainNav = () => {
         </Link>
       )}
       {!isCoderLogin && (
-        <Link to="/blogs" className="docs">
-          About Us
-        </Link>
-      )}
-      {!isCoderLogin && (
         <Link className="login" to="/coder/login">
           Log In
         </Link>
       )}
-      {isCoderLogin && <button onClick={logout}>Logout</button>}
       {isCoderLogin && <Link to="/coder/dashboard">Dashboard</Link>}
+      {isCoderLogin && (
+        <button className="logout-button" onClick={logout}>
+          Logout
+        </button>
+      )}
       {!isCoderLogin && <Link to="/buyer">Become a Buyer</Link>}
     </div>
   );

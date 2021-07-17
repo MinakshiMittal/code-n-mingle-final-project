@@ -31,13 +31,24 @@ export const UploadedProjects = () => {
       <div className="uploaded-project-list product-name-with-wishlist-icon">
         <h4>{uploadedProject.projectName}</h4>
       </div>
-      <div>{uploadedProject.bidPrice}</div>
-      <video
+      <iframe
+        className="video-play-screen"
+        // style={{ width: "700px", height: "400px" }}
+        title="Video"
+        src={`https://www.youtube.com/embed/PReWdfg2cM8?rel=0&enablejsapi=1`}
+        allow="autoplay"
+        allowFullScreen
+      ></iframe>
+      {/* <video
         src="https://www.youtube.com/embed/lYNwOJeY6_E"
         className="video-play-screen"
         controls
         autoPlay
-      ></video>
+      ></video> */}
+      <div className="bid-price-container">
+        Bid Price: ₹{uploadedProject.bidPrice}
+      </div>
+
       <div>{uploadedProject.projectDescription}</div>
     </div>
   );

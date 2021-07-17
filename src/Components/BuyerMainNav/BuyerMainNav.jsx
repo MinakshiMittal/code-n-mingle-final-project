@@ -17,7 +17,11 @@ export const BuyerMainNav = () => {
           Log In
         </Link>
       )}
-      {isBuyerLogin && <button onClick={logout}>Logout</button>}
+      {isBuyerLogin && (
+        <button onClick={logout} className="logout-button">
+          Logout
+        </button>
+      )}
       {isBuyerLogin && <Link to="/buyer/dashboard">Dashboard</Link>}
       {!isBuyerLogin && <Link to="/">Log In As A Coder</Link>}
     </div>

@@ -11,10 +11,11 @@ export const CoderCreateABid = () => {
   const [bidPriceByCoder, setBidPrice] = useState(0);
   const [bidDeliveryTimeInDaysByCoder, setBidDeliveryTimeInDays] = useState();
   const [project, setProjects] = useState({});
+  const [status, setStatus] = useState();
 
   const bidHandler = async (event) => {
     event.preventDefault();
-    return await axios.post(
+    const { status } = await axios.post(
       "https://code-n-mingle-backend.mittalminakshi.repl.co/buyer-projects/create-a-bid",
       {
         project: projectId,
@@ -25,6 +26,9 @@ export const CoderCreateABid = () => {
         headers: { authorization: token },
       }
     );
+    if (status === 200) {
+      navigate("/available-projects");
+    }
   };
 
   useEffect(() => {
@@ -62,24 +66,28 @@ export const CoderCreateABid = () => {
         <h1 className="project-name">{name}</h1>
         <div className="bid-container">
           <img className="bidding-project-image" src={imageUrl} alt="project" />
-          <div className="create-a-bid-container">
-            <h2 className="bid-container-title">Create A Bid</h2>
-            <input
-              onChange={(event) => setBidPrice(event.target.value)}
-              className="bidding-input"
-              type="number"
-              placeholder="Enter your bidding price"
-            />
-            <input
-              onChange={(event) => setBidDeliveryTimeInDays(event.target.value)}
-              type="number"
-              className="bidding-input"
-              placeholder="Enter your delivery time in days"
-            />
-            <button className="confirm-bid-button" onClick={bidHandler}>
-              Confirm Bid
-            </button>
-          </div>
+          {!status && (
+            <div className="create-a-bid-container">
+              <h2 className="bid-container-title">Create A Bid</h2>
+              <input
+                onChange={(event) => setBidPrice(event.target.value)}
+                className="bidding-input"
+                type="number"
+                placeholder="Enter your bidding price"
+              />
+              <input
+                onChange={(event) =>
+                  setBidDeliveryTimeInDays(event.target.value)
+                }
+                type="number"
+                className="bidding-input"
+                placeholder="Enter your delivery time in days"
+              />
+              <button className="confirm-bid-button" onClick={bidHandler}>
+                Confirm Bid
+              </button>
+            </div>
+          )}
         </div>
         <p className="project-bid-price">Project Bid Price: ₹{minBidPrice} </p>
         <p className="project-delivery-time">

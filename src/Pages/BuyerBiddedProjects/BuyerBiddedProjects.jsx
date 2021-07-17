@@ -2,14 +2,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import {
   CoderDashBoardSideNav,
-  CoderMainNav,
+  BuyerMainNav,
   BiddedProjectCard,
 } from "../../Components";
-import { useCoderAuth } from "../../Context";
-import "./CoderBiddedProjects.css";
+import "./BuyerBiddedProjects.css";
 
-export const CoderBiddedProjects = () => {
-  const { token } = useCoderAuth();
+export const BuyerBiddedProjects = () => {
+  const token =
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlcklkIjoiNjBlZGNiZTY4YjkxZDYwMDI1OGI1ZDY5IiwiaWF0IjoxNjI2NTA3MTM4LCJleHAiOjE2MjY1OTM1Mzh9.nxbiOHRLC9foUlpIpceLBEx3TgiNHZtL4TGWDLOOsyo";
   const [biddedProjects, setBiddedProjects] = useState(null);
   useEffect(() => {
     (async () => {
@@ -32,7 +32,7 @@ export const CoderBiddedProjects = () => {
 
   return (
     <>
-      <CoderMainNav />
+      <BuyerMainNav />
       <div className="coder-dashboard">
         <CoderDashBoardSideNav />
         <div className="all-bidded-projects-container">

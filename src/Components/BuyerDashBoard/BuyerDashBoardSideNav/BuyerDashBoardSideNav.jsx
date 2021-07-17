@@ -20,15 +20,18 @@ export const BuyerDashBoardSideNav = () => {
         <Link to="/buyer/uploaded-projects">
           <li>Uploaded Projects</li>
         </Link>
-        <li>Bidded Projects</li>
+        {/* <Link to="/buyer/bidded-projects">
+          <li>Bidded Projects</li>
+        </Link> */}
+        {/*
         <li>Projects In Progress</li>
         <li>Completed Projects</li>
-        <li>Bought Projects</li>
+        <li>Bought Projects</li> */}
         <Link to="/buyer/reviews">
           <li>Reviews</li>
         </Link>
 
-        <li>Buy A Project</li>
+        {/* <li>Buy A Project</li> */}
 
         <li onClick={logout}>Logout</li>
       </ul>

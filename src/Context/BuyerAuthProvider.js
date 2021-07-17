@@ -38,6 +38,7 @@ export const BuyerAuthProvider = ({ children }) => {
   const [token, setToken] = useState(savedToken);
   const [buyerDetails, setBuyerDetails] = useState(buyerId);
   const navigate = useNavigate();
+  const coderDetails = "60edcbe68b91d600258b5d69";
 
   const signUpBuyerWithDetails = async (
     firstName,

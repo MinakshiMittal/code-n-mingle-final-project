@@ -1,6 +1,22 @@
 .upload-project {
-  margin-left: 40%;
+  margin-left: 15%;
   margin-top: 5%;
   background: transparent;
   height: auto;
+  width: 100%;
+}
+
+.project-upload-input {
+  background-color: #eee;
+  border: none;
+  /* padding: 12px 15px; */
+  /* margin: 8px 0; */
+  width: 50%;
+  border-radius: 0.8rem;
+}
+
+.project-upload-textarea {
+  width: 50%;
+  border-radius: 0.8rem;
+  padding: 1rem;
 }
