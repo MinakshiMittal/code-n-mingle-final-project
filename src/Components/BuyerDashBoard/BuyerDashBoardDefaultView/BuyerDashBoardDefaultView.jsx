@@ -36,22 +36,28 @@ export const BuyerDashBoardDefaultView = () => {
     <div className="dashboard-cards-container">
       <div className="dashboard-card-container">
         <div className="card-container-1">
-          <div className="product-name-with-wishlist-icon">
-            <h4>PROJECTS IN PROGRESS LIST</h4>
+          <div
+            className="product-name-with-wishlist-icon"
+            style={{ flexGrow: 0, color: "white" }}
+          >
+            <h4 style={{ paddingBottom: 0 }}>PROJECTS IN PROGRESS LIST</h4>
           </div>
           <div className="product-price">
             <p className="current-product-price"></p>
 
-            <p className="current-product-price">Bid Price: ₹Price</p>
-            <p className="current-product-price">Bid DeliveryTime: days</p>
             <p className="current-product-price">
-              Finalized Bidding Price: ₹Price
+              Bid Price: ₹7000
+              <br />
             </p>
-            <p className="current-product-price">Finalized Delivery Time: </p>
+            <p className="current-product-price">Bid DeliveryTime: 10 days</p>
+            <p className="current-product-price" style={{ color: "#2cb8cb" }}>
+              Finalized Bidding Price: ₹9000
+            </p>
+            <p className="current-product-price" style={{ color: "#2cb8cb" }}>
+              Finalized Delivery Time: 9 days
+            </p>
 
-            <small className="amount-saved">
-              Expected delivery within delivery days
-            </small>
+            <small className="amount-saved"></small>
           </div>
         </div>
       </div>
@@ -74,7 +80,7 @@ export const BuyerDashBoardDefaultView = () => {
           </div>
         </div>
       </div>
-      <div className="dashboard-card-container">
+      {/* <div className="dashboard-card-container">
         <div className="card-container-3">
           <div className="product-name-with-wishlist-icon">
             <h4>name</h4>
@@ -86,7 +92,7 @@ export const BuyerDashBoardDefaultView = () => {
             </small>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <div className="dashboard-card-container">
         <div className="card-container-4">
           <div className="product-name-with-wishlist-icon">

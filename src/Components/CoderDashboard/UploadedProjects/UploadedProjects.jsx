@@ -49,7 +49,7 @@ export const UploadedProjects = () => {
         Bid Price: ₹{uploadedProject.bidPrice}
       </div>
 
-      <div>{uploadedProject.projectDescription}</div>
+      <div style={{ color: "white" }}>{uploadedProject.projectDescription}</div>
     </div>
   );
 };
